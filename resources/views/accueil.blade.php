@@ -75,7 +75,7 @@
 
           <div class="site-logo">
               <div class="col-lg-1 d-none d-lg-block">
-                  <img  src="img/axenett - Copie.png" alt="" class="logo" href=""> 
+                  <img  src="img/axenet.png" alt="" class="logo" href=""> 
              </div>
           </div>
                  
