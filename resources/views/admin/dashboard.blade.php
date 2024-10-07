@@ -12,7 +12,7 @@
         <div class="sidebar">
             <a href="#" class="logo">
                 <img src="{{url("img/axenet.png")}}" width="50px" >
-                <div class="logo-name"><span>Iaxe</span>Net</div>
+                <div class="logo-name"><span>Iaxe</span>Net</div> 
             </a>
             <ul class="side-menu">
                 <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
