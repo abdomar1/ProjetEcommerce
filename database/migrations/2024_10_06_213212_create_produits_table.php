@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('marque');
             $table->string('coleur');          
             
-            $table->foreignId('idCate')->constrained('categories')->cascadeOnDelete(); // FK vers `commandes`
+            $table->foreignId('idCate')->constrained('categories')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
 
       
         });

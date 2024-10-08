@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="utf-8">
     <title>Axanet Services</title>
@@ -60,138 +60,151 @@
 
 
 
+    
+
      <div class="col-lg-13">
 
-            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-            <br></br>
-            <br></br>
-
-                <div class="site-logo">
-                    <div class="col-lg-1 d-none d-lg-block">
-                        <img  src="img/axenett - Copie.png" alt="" class="logo" href=""> 
-                    </div>
-                </div>
-          
+<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+             <div class="site-logo">
+                 <div class="col-lg-1 d-none d-lg-block">
+                     <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                 </div>
+             </div>
+                     
              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
                      <a href="accueils" class="nav-item nav-link">Accueil</a>
                      <a href="produits" class="nav-item nav-link active">Produits</a>
-                     <a href="categories" class="nav-item nav-link active">Catégories</a>
+                     
+                     <a href="categories" class="nav-item nav-link">Catégories</a>
                      <a href="contacts" class="nav-item nav-link">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
-                     <form action="">
-                         <div class="input-group">
-                             <input type="text" class="form-control" placeholder="Recherche">
-                             <div class="input-group-append">
-                                 <span class="input-group-text bg-transparent text-primary">
-                                     <i class="fa fa-search"></i>
-                                 </span>
-                             </div> 
-                             
-                             
-                             <div class="col-lg-2 col-6 text-right">
-                                        <a href="paniers" class="btn border">
-                                            <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge"></span>
-                                        </a>
+                     <form action=""> 
+
+                        <div class="input-group">
+                            <div class="col-lg-2 col-6 text-right">
+                                 <a href="paniers" class="btn border">
+                                     <i class="fas fa-shopping-cart text-primary"></i>
+                                     <span class="badge">0</span>
+                                 </a>  
+                            </div>
+                            <div class="input-grou">
+                               <div class="col-lg-2 col-6 text-right">
+                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                             <i class="fa fa-user text-primary" ></i>
+                                     </button>
+
                                  </div>
-                                
-                                
-                                 <div class="col-lg-2 col-6 text-right">
-
-                                        <button type="button" class="btn btn border" data-toggle="modal" data-target="#authModal">
-                                        <i class="fa fa-user text-primary" ></i>
-                                        </button>
-
-                                               <!-- Modal -->
-                                    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                            </li>
-                                            </ul>
-
-                                            <!-- Tab content -->
-                                            <div class="tab-content">
-                                            <!-- Connexion -->
-                                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                <form id="loginForm">
-                                                <div class="form-group">
-                                                    <label for="loginEmail">Email</label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="loginPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                </form>
-                                            </div>
-
-                                            <!-- Inscription -->
-                                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                <form id="registerForm">
-                                                <div class="form-group">
-                                                    <label for="registerName">Nom</label>
-                                                    <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerEmail">Email</label>
-                                                    <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
-                                                </form>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                 </div>
-
-                                <!-- Contenu existant de votre navbar -->
-
-                                    <!-- Inclure FontAwesome -->
-                                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
-
-
-
-                              </div>  
-
-
-                              
-                            </form>
+                           </div>
                             
-                     </div> 
-              </div>
-      
+                         </div>      
+                         
+                          
+                                
+                                        <!-- Modal -->
+                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                         </h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <!-- Nav tabs -->
+                                         <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                         <li class="nav-item">
+                                             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                         </li>
+                                         </ul>
 
-        </div>
-    </nav>
+                                         <!-- Tab content -->
+                                         <div class="tab-content">
+                                             <!-- Connexion -->
+                                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                 <form id="loginForm">
+                                                 <div class="form-group">
+                                                     <label for="loginEmail">Email</label>
+                                                     <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="loginPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                 </form>
+                                             </div>
+
+                                             <!-- Inscription -->
+                                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                 <form id="registerForm">
+                                                 <div class="form-group">
+                                                     <label for="registerName">Nom</label>
+                                                     <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerEmail">Email</label>
+                                                     <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 </form>
+                                             </div>
+                                     </div>
+                                 </div>
+                          </div>
+                      </div>
+                  </div>
+                        
+
+                         <!-- Contenu existant de votre navbar -->
+
+                             <!-- Inclure FontAwesome -->
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+
+
+
+
+
+
+
+                                                     
+
+
+                      
+             
+
+                       </div>  
+
+
+                       
+                     </form>
+              </div>  
+             
+                     
+      </div> 
+ </nav>
 </div>
+
+
+
+
+
+
+
     <!-- Topbar End -->
 
     <!-- Page Header Start -->
@@ -214,6 +227,26 @@
         <div class="row px-xl-5">
             <!-- Shop Sidebar Start -->
             <div class="col-lg-3 col-md-12">
+
+
+               <div class="border-bottom mb-4 pb-4">
+                    <h5 class="font-weight-semi-bold mb-4">Filter par Catégories</h5>
+                    <form>
+                       
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="radio" class="custom-control-input" checked id="color-1">
+                            <label class="custom-control-label" for="color-1">ALL</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="radio" class="custom-control-input" id="color-2">
+                            <label class="custom-control-label" for="color-2">PC</label>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="radio" class="custom-control-input" id="color-2">
+                            <label class="custom-control-label" for="color-2">Télephone</label>
+                        </div>
+                    </form>
+                </div>
 
 
                <!-- marque Start -->
@@ -258,7 +291,7 @@
                 
                 <!-- Color Start -->
                 <div class="border-bottom mb-4 pb-4">
-                    <h5 class="font-weight-semi-bold mb-4">Filter par couleurs</h5>
+                    <h5 class="font-weight-semi-bold mb-4">Filtrer par couleurs</h5>
                     <form>
                        
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -278,39 +311,51 @@
 
             <!-- Shop Product Start -->
             <div class="col-lg-9 col-md-12">
-                <div class="row pb-3">
-                    <div class="col-12 pb-1">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <form action="">
-                                <div class="input-group">
-                                    <select class="form-control" id="categoryDropdown">
-                                        <option selected disabled>Choisir une catégorie</option>
-                                        <option value="electronique">PC</option>
-                                        <option value="vetements">Télephone</option>
-                                    </select>
-                                    <div class="input-group-append">
+                    <div class="container-fluid pt-5">
+                        <div class="row">
+                             <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="card border-0 shadow-sm position-relative">
+                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
+                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                        </div>
                                     
+                                    </div>  <div class="mb text-center">
+                                            <h4 class="mb-0">Produit 1</h4>
+                                            <h6 class="mb-0">$123.00</h6>
+                                        </div>
+                                </div>
+
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card border-0 shadow-sm position-relative">
+                                    <img src="img/product02.png" class="card-img-top img-fluid rounded" alt="Produit 2">
+                                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                                        <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                  </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
-                    <div class="row">
-                            <div class="card border-0 shadow-sm position-relative">
-                                <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                                <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                
-                                    <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                                    <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                </div>
-                                <div class="card-footer text-center">
-                                    <h5 class="mb-0">Produit 1</h5>
-                                    <h6 class="text-warning mb-0">$123.00</h6>
-                                </div>
+                                 
+                                </div>  <div class="mb text-center">
+                                        <h4 class="mb-0">Produit 2</h4>
+                                        <h6 class="mb-0">$123.00</h6>
+                                    </div>
                             </div>
-                        
-                    </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card border-0 shadow-sm position-relative">
+                                    <img src="img/product03.png" class="card-img-top img-fluid rounded" alt="Produit 3">
+                                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                                        <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                    </div>
+                                
+                                </div> <div class="mb text-center">
+                                        <h4 class="mb-0">Produit 3</h4>
+                                        <h6 class="mb-0">$123.00</h6>
+                                    </div>
+                            </div> 
+                        </div>
+                    <!-- Products End -->
+
                     <br></br>
                     <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">

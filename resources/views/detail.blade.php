@@ -24,7 +24,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+
     <link href="css/footer.css" rel="stylesheet" />
+
 
 </head>
 
@@ -63,137 +65,129 @@
 
        <!-- Header Top Area End -->
 
-
-
        <div class="col-lg-13">
 
 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-   <br></br>
-   <br></br>
-
-   <div class="site-logo">
-       <div class="col-lg-1 d-none d-lg-block">
-           <img  src="img/axenett - Copie.png" alt="" class="logo" href=""> 
-      </div>
-   </div>
-          
+             <div class="site-logo">
+                 <div class="col-lg-1 d-none d-lg-block">
+                     <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                 </div>
+             </div>
+                     
              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link">Accueil</a>
-                     <a href="produits" class="nav-item nav-link active">Produits</a>
-                     <a href="categories" class="nav-item nav-link active">Catégories</a>
-
+                     <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                     <a href="produits" class="nav-item nav-link">Produits</a>
+                     
+                     <a href="categories" class="nav-item nav-link">Catégories</a>
                      <a href="contacts" class="nav-item nav-link">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
-                     <form action="">
-                         <div class="input-group">
-                             <input type="text" class="form-control" placeholder="Recherche">
-                             <div class="input-group-append">
-                                 <span class="input-group-text bg-transparent text-primary">
-                                     <i class="fa fa-search"></i>
-                                 </span>
-                             </div> 
-                             
-                             
-                             <div class="col-lg-2 col-6 text-right">
-                                        <a href="paniers" class="btn border">
-                                            <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge"></span>
-                                        </a>
+                     <form action=""> 
+
+                        <div class="input-group">
+                            <div class="col-lg-2 col-6 text-right">
+                                 <a href="paniers" class="btn border">
+                                     <i class="fas fa-shopping-cart text-primary"></i>
+                                     <span class="badge">0</span>
+                                 </a>  
+                            </div>
+                            <div class="input-grou">
+                               <div class="col-lg-2 col-6 text-right">
+                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                             <i class="fa fa-user text-primary" ></i>
+                                     </button>
+
                                  </div>
-                                
-                                
-                                 <div class="col-lg-2 col-6 text-right">
-
-                                        <button type="button" class="btn btn border" data-toggle="modal" data-target="#authModal">
-                                        <i class="fa fa-user text-primary" ></i>
-                                        </button>
-
-                                               <!-- Modal -->
-                                    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                            </li>
-                                            </ul>
-
-                                            <!-- Tab content -->
-                                            <div class="tab-content">
-                                            <!-- Connexion -->
-                                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                <form id="loginForm">
-                                                <div class="form-group">
-                                                    <label for="loginEmail">Email</label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="loginPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                </form>
-                                            </div>
-
-                                            <!-- Inscription -->
-                                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                <form id="registerForm">
-                                                <div class="form-group">
-                                                    <label for="registerName">Nom</label>
-                                                    <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerEmail">Email</label>
-                                                    <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
-                                                </form>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                 </div>
-
-                                <!-- Contenu existant de votre navbar -->
-
-                                    <!-- Inclure FontAwesome -->
-                                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
-                              </div>  
-
-
-                              
-                            </form>
+                           </div>
                             
-                     </div> 
-                 </div>
-      
+                         </div>      
+                         
+                          
+                                
+                                        <!-- Modal -->
+                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                         </h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <!-- Nav tabs -->
+                                         <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                         <li class="nav-item">
+                                             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                         </li>
+                                         </ul>
 
-    </div>
-</nav>
+                                         <!-- Tab content -->
+                                         <div class="tab-content">
+                                             <!-- Connexion -->
+                                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                 <form id="loginForm">
+                                                 <div class="form-group">
+                                                     <label for="loginEmail">Email</label>
+                                                     <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="loginPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                 </form>
+                                             </div>
+
+                                             <!-- Inscription -->
+                                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                 <form id="registerForm">
+                                                 <div class="form-group">
+                                                     <label for="registerName">Nom</label>
+                                                     <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerEmail">Email</label>
+                                                     <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 </form>
+                                             </div>
+                                     </div>
+                                 </div>
+                          </div>
+                      </div>
+                  </div>
+                        
+
+                         <!-- Contenu existant de votre navbar -->
+
+                             <!-- Inclure FontAwesome -->
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+
+                       </div>  
+
+
+                       
+                     </form>
+              </div>  
+             
+                     
+      </div> 
+ </nav>
 </div>
     <!-- Topbar End -->
 
@@ -214,7 +208,7 @@
 
 
     <!-- Shop Detail Start -->
-    <div class="container-fluid py-5">
+    <!-- <div class="container-fluid py-5">
         <div class="row px-xl-5">
             <div class="col-lg-5 pb-5">
                 <div id="product-carousel" data-ride="carousel">
@@ -282,8 +276,217 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Shop Detail End -->
+
+
+
+
+ <!-- Product Details Section Begin -->
+ <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="product__details__pic">
+                        <div class="product__details__slider__content">
+                            <div class="product__details__pic__slider owl-carousel">
+                                <img data-hash="product-1" class="product__big__img" src="img/product/details/product-1.jpg" alt="">
+                                <img data-hash="product-2" class="product__big__img" src="img/product/details/product-3.jpg" alt="">
+                                <img data-hash="product-3" class="product__big__img" src="img/product/details/product-2.jpg" alt="">
+                                <img data-hash="product-4" class="product__big__img" src="img/product/details/product-4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product__details__text">
+                        <h3>Essential structured blazer <span>Brand: SKMEIMore Men Watches from SKMEI</span></h3>
+                        <div class="product__details__price">$ 75.0</div>
+                        <p>Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <div class="product__details__button">
+
+
+                            <div class="quantity">
+                                <span>Quantité :</span>
+                                <div class="pro-qty">
+                                    <button class="qty-btn minus">-</button>
+                                    <input type="text" value="1" class="qty-input">
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                            </div>
+
+
+
+                            <a href="#" class="cart-btn"><span class="fa fa-shopping-cart mr-1"></span>Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Descriptif technique</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Principales caractéristiques</a>
+</li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <h6>Descriptif technique</h6>
+                                <p>L'ordinateur portable fin et léger HP EliteBook 840 G5 de 8ème génération permet aux utilisateurs d'être ultra productifs au bureau et en dehors du bureau. Travaillez en toute confiance grâce à des technologies éprouvées, à la sécurité, aux performances et aux fonctions de gestion qui sauront répondre à tous vos besoins.</p>
+                               
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <h6>Principales caractéristiques</h6>
+                                <ul  id="details">
+                                    <li>SKU: HP017CL1HU3QDNAFAMZ</li>
+                                    <li>Gamme de produits: HP ELITEBOOK</li>
+                                    <li>Modèle: HP ELITEBOOK</li>
+                                    <li>Poids (kg): 1.48</li>
+                                    <li>Matière principale: pvc </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="related__title">
+                        <h5>RELATED PRODUCTS</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-1.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/cat-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Buttons tweed blazer</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-2.jpg">
+                            <ul class="product__hover">
+                                <li><a href="img/product/related/rp-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Flowy striped skirt</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 49.0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-3.jpg">
+                            <div class="label stockout">out of stock</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/related/rp-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Cotton T-Shirt</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-4.jpg">
+                            <ul class="product__hover">
+                                <li><a href="img/product/related/rp-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Slim striped pocket shirt</a></h6>
+                           
+                            <div class="product__price">$ 59.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Products Start -->
@@ -297,90 +500,48 @@
                     <div class="card product-item border-0">
                         <div class="col-12 pb-1">
                                 <div class="row">
-                                        <div class="card border-0 shadow-sm position-relative">
-                                            <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                                            <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            
-                                                <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                                                <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                <h5 class="mb-0">Produit 1</h5>
-                                                <h6 class="text-warning mb-0">$123.00</h6>
-                                            </div>
+                                <div class="card border-0 shadow-sm position-relative">
+                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
+                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                         </div>
-                                    </div>
+                                    
+                                    </div>  <div class="mb text-center">
+                                            <h4 class="mb-0">Produit 1</h4>
+                                            <h6 class="mb-0">$123.00</h6>
+                                        </div>
+                                </div>
                         </div>
                     </div>
                     <div class="card product-item border-0">
                           <div class="col-12 pb-1">
                                 <div class="row">
-                                        <div class="card border-0 shadow-sm position-relative">
-                                            <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                                            <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            
-                                                <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                                                <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                <h5 class="mb-0">Produit 1</h5>
-                                                <h6 class="text-warning mb-0">$123.00</h6>
-                                            </div>
+                                <div class="card border-0 shadow-sm position-relative">
+                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
+                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                         </div>
+                                    
+                                    </div>  <div class="mb text-center">
+                                            <h4 class="mb-0">Produit 1</h4>
+                                            <h6 class="mb-0">$123.00</h6>
+                                        </div>
+                                </div>
                                     </div>
                         </div>
                     </div>
-                    <div class="card product-item border-0">
-                        <div class="col-12 pb-1">
-                                    <div class="row">
-                                            <div class="card border-0 shadow-sm position-relative">
-                                                <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                                                <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                                
-                                                    <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                                                    <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                                </div>
-                                                <div class="card-footer text-center">
-                                                    <h5 class="mb-0">Produit 1</h5>
-                                                    <h6 class="text-warning mb-0">$123.00</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                    </div>
-                    <div class="card product-item border-0">
-                    <div class="col-12 pb-1">
-                                <div class="row">
-                                        <div class="card border-0 shadow-sm position-relative">
-                                            <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                                            <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            
-                                                <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                                                <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                <h5 class="mb-0">Produit 1</h5>
-                                                <h6 class="text-warning mb-0">$123.00</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                        </div>
                    
                 </div>
             </div>
         </div>
     </div>
     <!-- Products End -->
+
      <br></br>
      <br></br>
      <br></br>
-
-
-
-
-
-
-    
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->

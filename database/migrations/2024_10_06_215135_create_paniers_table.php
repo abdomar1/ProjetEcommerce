@@ -18,8 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('qtePan');
 
-            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete();
-            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete();
+            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate();
 
         });
     }

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylee.css">
+
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -77,199 +79,197 @@
      </section>
      <!-- Header Top Area End -->
 
-
-
      <div class="col-lg-13">
 
 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-   <br></br>
-   <br></br>
-
-   <div class="site-logo">
-       <div class="col-lg-1 d-none d-lg-block">
-           <img  src="img/axenett - Copie.png" alt="" class="logo" href=""> 
-      </div>
-   </div>
-          
+             <div class="site-logo">
+                 <div class="col-lg-1 d-none d-lg-block">
+                     <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                 </div>
+             </div>
+                     
              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
                      <a href="accueils" class="nav-item nav-link">Accueil</a>
-                     <a href="produits" class="nav-item nav-link active">Produits</a>
-                    <a href="categories" class="nav-item nav-link active">Catégories</a>
-
-                     <a href="contacts" class="nav-item nav-link">Contacte</a>
+                     <a href="produits" class="nav-item nav-link">Produits</a>
+                     
+                     <a href="categories" class="nav-item nav-link">Catégories</a>
+                     <a href="contacts" class="nav-item nav-link  active">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
-                     <form action="">
-                         <div class="input-group">
-                             <input type="text" class="form-control" placeholder="Recherche">
-                             <div class="input-group-append">
-                                 <span class="input-group-text bg-transparent text-primary">
-                                     <i class="fa fa-search"></i>
-                                 </span>
-                             </div> 
-                             
-                             <div class="col-lg-2 col-6 text-right">
-                                        <a href="paniers" class="btn border">
-                                            <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge"></span>
-                                        </a>
+                     <form action=""> 
+
+                        <div class="input-group">
+                            <div class="col-lg-2 col-6 text-right">
+                                 <a href="paniers" class="btn border">
+                                     <i class="fas fa-shopping-cart text-primary"></i>
+                                     <span class="badge">0</span>
+                                 </a>  
+                            </div>
+                            <div class="input-grou">
+                               <div class="col-lg-2 col-6 text-right">
+                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                             <i class="fa fa-user text-primary" ></i>
+                                     </button>
+
                                  </div>
-                                
-                                
-                                 <div class="col-lg-2 col-6 text-right">
-
-                                        <button type="button" class="btn btn border" data-toggle="modal" data-target="#authModal">
-                                        <i class="fa fa-user text-primary" ></i>
-                                        </button>
-
-                                               <!-- Modal -->
-                                    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                            </li>
-                                            </ul>
-
-                                            <!-- Tab content -->
-                                            <div class="tab-content">
-                                            <!-- Connexion -->
-                                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                <form id="loginForm">
-                                                <div class="form-group">
-                                                    <label for="loginEmail">Email</label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="loginPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                </form>
-                                            </div>
-
-                                            <!-- Inscription -->
-                                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                <form id="registerForm">
-                                                <div class="form-group">
-                                                    <label for="registerName">Nom</label>
-                                                    <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerEmail">Email</label>
-                                                    <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
-                                                </form>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                 </div>
-
-                                <!-- Contenu existant de votre navbar -->
-
-                                    <!-- Inclure FontAwesome -->
-                                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
-                    
-                              </div>  
-
-
-                              
-                            </form>
+                           </div>
                             
-                     </div> 
-                 </div>
-      
+                         </div>      
+                         
+                          
+                                
+                                        <!-- Modal -->
+                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                         </h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <!-- Nav tabs -->
+                                         <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                         <li class="nav-item">
+                                             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                         </li>
+                                         </ul>
 
-    </div>
-</nav>
+                                         <!-- Tab content -->
+                                         <div class="tab-content">
+                                             <!-- Connexion -->
+                                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                 <form id="loginForm">
+                                                 <div class="form-group">
+                                                     <label for="loginEmail">Email</label>
+                                                     <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="loginPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                 </form>
+                                             </div>
+
+                                             <!-- Inscription -->
+                                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                 <form id="registerForm">
+                                                 <div class="form-group">
+                                                     <label for="registerName">Nom</label>
+                                                     <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerEmail">Email</label>
+                                                     <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 </form>
+                                             </div>
+                                     </div>
+                                 </div>
+                          </div>
+                      </div>
+                  </div>
+                        
+
+                         <!-- Contenu existant de votre navbar -->
+
+                             <!-- Inclure FontAwesome -->
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+
+                       </div>  
+
+
+                       
+                     </form>
+              </div>  
+      </div> 
+ </nav>
 </div>
-    <!-- Topbar End -->
-
-    
+<!-- -///////////end nav -->
 
 
 
 
-
-
-
-
-
-
-
-
-    <section class="contact_section layout_padding">
-    <div class="contact_bg_box">
-      <div class="img-box">
-        <img src="images/contact-bg.jpg" alt="">
-      </div>
-    </div>
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Contact pour toutrs questions
-        </h2>
-      </div>
-      <div class="">
-        <div class="row">
-          <div class="col-md-7 mx-auto">
-            <form action="#">
-              <div class="contact_form-container">
-                <div>
-                  <div>
-                    <input type="text" placeholder="Votre nom" />
-                  </div> 
-                  <div>
-                    <input type="email" placeholder="Email" />
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Numéro de Télèphone" />
-                  </div>
-                  <div class="">
-                    <input type="text" placeholder="Message" class="Votre Message" />
-                  </div>
-                  <div class="btn-box ">
-                    <button type="submit">
-                      Envoyer
-                    </button>
-                  </div>
+  <!-- Page Header Start -->
+  <div style="background-image:url('img/pc.jpg')">   
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+                <h1 class="font-weight-semi-bold text-uppercase mb-3">Contact</h1>
+                <div class="d-inline-flex">
+                <p class="m-0"><a href="accueils">Accueil</a></p>
+                <p class="m-0 px-2">-</p>
+                    <p class="m-0">Contact</p>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <br></br>
+    <!-- Page Header End -->
 
-  <!-- end contact section -->
+
+
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                        <div class="contact__address">
+                            <h5>Coordonnées</h5>
+                            <ul>
+                                <li>
+                                    <h6><i class="fa fa-map-marker"></i> Adresse</h6>
+                                    <p>22 Rue Ahmed Loukili V.N FES, Fez, Morocco</p>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-phone"></i> Télèphone</h6>
+                                    <p><span>+212 5359-31468</span></p>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-headphones"></i> Email</h6>
+                                    <p>axanet1@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contact__form">
+                            <h5>Envoyer un message</h5>
+                            <form action="#">
+                                <input type="text" placeholder="Nom">
+                                <input type="text" placeholder="Email">
+                                <textarea placeholder="Message"></textarea>
+                                <button type="submit" class="site-btn">Envoyer un message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__map">
+                        <iframe
+                        src="https://www.google.fr/maps/search/22+Rue+Ahmed+Loukili+V.N+FES,+Fez,+Morocco/@34.0444834,-5.0011979,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
+                        height="780" style="border:0" allowfullscreen="">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
 
 
 

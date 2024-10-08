@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete(); // FK vers `utilisateurs`
+            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
             $table->decimal('total', 10, 2);
             $table->string('status');
             $table->dateTime('dateCmd');

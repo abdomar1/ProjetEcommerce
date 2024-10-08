@@ -15,15 +15,16 @@ return new class extends Migration
     {
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nomU');
-            $table->string('prenom');
+            $table->string('prenomU');
             $table->string('email');
             $table->string('password');
-            $table->string('adresse');
             $table->string('telephone');
+            $table->string('adresse');
+
+
             $table->foreignId('idRole')->constrained('roles')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `roles`
-         
+            $table->timestamps();
         });
     }
 
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('utilisateurs');
+        //
     }
 };

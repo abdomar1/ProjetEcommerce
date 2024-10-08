@@ -27,9 +27,7 @@
 
     <link href="css/responsive.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
-
-
-    
+    <!-- <link rel="stylesheet" href="css/stylee.css" type="text/css"> -->
 
 
     <!-- ////////////////////////////////////// -->
@@ -64,181 +62,132 @@
         </div>
      </section>
      <!-- Header Top Area End -->
-
-    
-
     <div class="col-lg-13">
 
        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-          <br></br>
-          <br></br>
-
-          <div class="site-logo">
-              <div class="col-lg-1 d-none d-lg-block">
-                  <img  src="img/axenet.png" alt="" class="logo" href=""> 
-             </div>
-          </div>
-                 
+                    <div class="site-logo">
+                        <div class="col-lg-1 d-none d-lg-block">
+                            <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                        </div>
+                    </div>
+                            
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+           <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="accueils" class="nav-item nav-link">Accueil</a>
-                            <a href="produits" class="nav-item nav-link active">Produits</a>
+                            <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                            <a href="produits" class="nav-item nav-link">Produits</a>
                             
-                            <a href="categories" class="nav-item nav-link active">Catégories</a>
+                            <a href="categories" class="nav-item nav-link">Catégories</a>
                             <a href="contacts" class="nav-item nav-link">Contacte</a>
                         </div>
                     
                         <div class="col-lg-6 col-6 text-left">
-                            <form action="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Recherche">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-transparent text-primary">
-                                            <i class="fa fa-search"></i>
-                                        </span>
-                                    </div> 
-                                    
-                                    
+                            <form action=""> 
+
+                               <div class="input-group">
                                    <div class="col-lg-2 col-6 text-right">
                                         <a href="paniers" class="btn border">
                                             <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge"></span>
-                                        </a>
-                                 </div>
-                                
-                                
-                                 <div class="col-lg-2 col-6 text-right">
+                                            <span class="badge">0</span>
+                                        </a>  
+                                   </div>
+                                   <div class="input-grou">
+                                      <div class="col-lg-2 col-6 text-right">
+                                            <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                                    <i class="fa fa-user text-primary" ></i>
+                                            </button>
 
-                                        <button type="button" class="btn btn border" data-toggle="modal" data-target="#authModal">
-                                        <i class="fa fa-user text-primary" ></i>
-                                        </button>
-
+                                        </div>
+                                  </div>
+                                   
+                                </div>      
+                                
+                                 
+                                       
                                                <!-- Modal -->
-                                    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                            </li>
-                                            </ul>
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                                </li>
+                                                </ul>
 
-                                            <!-- Tab content -->
-                                            <div class="tab-content">
-                                            <!-- Connexion -->
-                                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                <form id="loginForm">
-                                                <div class="form-group">
-                                                    <label for="loginEmail">Email</label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="loginPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                </form>
-                                            </div>
+                                                <!-- Tab content -->
+                                                <div class="tab-content">
+                                                    <!-- Connexion -->
+                                                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                        <form id="loginForm">
+                                                        <div class="form-group">
+                                                            <label for="loginEmail">Email</label>
+                                                            <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loginPassword">Mot de passe</label>
+                                                            <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                        </form>
+                                                    </div>
 
-                                            <!-- Inscription -->
-                                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                <form id="registerForm">
-                                                <div class="form-group">
-                                                    <label for="registerName">Nom</label>
-                                                    <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerEmail">Email</label>
-                                                    <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerPassword">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
-                                                </form>
-                                            </div>
+                                                    <!-- Inscription -->
+                                                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                        <form id="registerForm">
+                                                        <div class="form-group">
+                                                            <label for="registerName">Nom</label>
+                                                            <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="registerEmail">Email</label>
+                                                            <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="registerPassword">Mot de passe</label>
+                                                            <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                        </form>
+                                                    </div>
                                             </div>
                                         </div>
-                                        </div>
-                                    </div>
-                                    </div>
                                  </div>
+                             </div>
+                         </div>
+                               
 
                                 <!-- Contenu existant de votre navbar -->
 
                                     <!-- Inclure FontAwesome -->
                                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
 
-
-
-
-
-
-
-                                                            
-
-
-                             
-                    
-
                               </div>  
 
 
                               
                             </form>
+                     </div>  
+                    
                             
-                     </div> 
-
-
-
-                
-
-      
-<!--                      
-                     <a href="" class="nav-item nav-link">Login</a>
-                     <a href="" class="nav-item nav-link">Register</a> -->
-                     
-                 </div>
-      
-
-    </div>
-</nav>
-</div>
-
+             </div> 
+        </nav>
+ </div>
+<!-- -///////////end nav -->
   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <body>
   <div class="hero_area">
@@ -303,25 +252,6 @@
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Products Start -->
 <div class="container-fluid pt-5">
     <div class="text-center mb-4">
@@ -329,45 +259,47 @@
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm position-relative">
-                <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 1">
-                <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                <div class="card border-0 shadow-sm position-relative">
+                    <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
+                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
+                        <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                        <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                    </div>
                   
-                    <a href="details" class="btn btn-outline-light">Voir Détails</a>
-                    <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                </div>
-                <div class="card-footer text-center">
-                    <h5 class="mb-0">Produit 1</h5>
-                    <h6 class="text-warning mb-0">$123.00</h6>
-                </div>
+                </div>  <div class="card-footer text-center">
+                        <h5 class="mb-0">Produit 1</h5>
+                        <h6 class="mb-0">$123.00</h6>
+                    </div>
             </div>
-        </div>
+
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card border-0 shadow-sm position-relative">
                 <img src="img/product02.png" class="card-img-top img-fluid rounded" alt="Produit 2">
                 <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                    <a href="#" class="btn btn-outline-light">Voir Détails</a>
+                    <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
                     <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                 </div>
-                <div class="card-footer text-center">
+              
+            </div>  <div class="card-footer text-center">
                     <h5 class="mb-0">Produit 2</h5>
-                    <h6 class="text-warning mb-0">$123.00</h6>
+                    <h6 class="mb-0">$123.00</h6>
                 </div>
-            </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card border-0 shadow-sm position-relative">
                 <img src="img/product03.png" class="card-img-top img-fluid rounded" alt="Produit 3">
                 <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                    <a href="#" class="btn btn-outline-light">Voir Détails</a>
+                    <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
                     <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                </div>
-                <div class="card-footer text-center">
+             </div>
+               
+            </div> <div class="card-footer text-center">
                     <h5 class="mb-0">Produit 3</h5>
-                    <h6 class="text-warning mb-0">$123.00</h6>
+                    <h6 class="mb-0">$123.00</h6>
                 </div>
-            </div>
         </div> 
+                
+       
     </div>
    
         </div><div class="text-center mt-4">
@@ -378,6 +310,39 @@
 <br></br>
 <!-- Products End -->
 
+
+
+
+ <!-- Featured Start -->
+ <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Produits de haute qualité</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-lock text-primary m-0 mr-3"></h1> 
+                    <h5 class="font-weight-semi-bold m-0">Paiement sécurisé</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Garantie satisfait</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Assistance 24h/24 et 7j/7</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured End -->
 
 
     <!-- Categories Start -->
@@ -398,7 +363,7 @@
 							</div>
 							<div class="shop-body">
 								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Acheter maintenant <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="#" class="cta-btn">Voir <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -410,7 +375,7 @@
 							</div>
 							<div class="shop-body">
 								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Acheter maintenant <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="#" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -424,7 +389,7 @@
 							</div>
 							<div class="shop-body">
 								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Acheter maintenant <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="#" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -450,35 +415,8 @@
     <br></br>
 
 
-    <!-- Offer Start -->
-    <!-- <div class="container-fluid offer pt-5">
-        <div class="row px-xl-5">
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                    <img src="img/offer-1.png" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Spring Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                    <img src="img/offer-2.png" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Winter Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Offer End -->
 
-
-
+   
 <!-- service section -->
 <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Notre Services</span></h2>
@@ -561,206 +499,154 @@
      <!-- end service section --> 
 
 
-    
- <!-- <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-1.jpg" alt="">
+
+
+       <!-- Instagram Begin -->
+<div class="instagram">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/shop03.png" alt="Instagram 1" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/shop01.png" alt="Instagram 2" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-3.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/hotdeal1.png" alt="Instagram 3" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-4.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/th (2).jpeg" alt="Instagram 4" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-5.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/product06.png" alt="Instagram 5" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-6.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-7.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-8.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                <div class="instagram__item">
+                    <img src="img/cat-4.jpg" alt="Instagram 6" class="img-fluid">
+                    <div class="instagram__overlay">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>  -->
-    <!-- Vendor End -->
+    </div>
+</div>
+<!-- Instagram End -->
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-
-<!------ Include the above in your HEAD tag ---------->
-
-<footer id="dk-footer" class="dk-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-4">
-                    <div class="dk-footer-box-info">
-                        <a href="index.html" class="footer-logo">
-                            <img src="img/axenett.png" alt="footer_logo" class="img-fluid">
-                        </a>
-                        <p class="footer-info-text">
-                        Entreprise pour la vente d'ordinateurs, PC, imprimantes, installation réseaux et cameras de surveillance, accessoires informatiques, 
-                        logiciels, applications et sites web.   </p>
-                        <div class="footer-social-link">
-                            <h3>Suivez-nous</h3>
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/FZINFO21/">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-whatsapp"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End Social link -->
-                    </div>
-                    <!-- End Footer info -->
-                    <div class="footer-awarad">
-                    </div>
-                </div>
-                <!-- End Col -->
-                <div class="col-md-12 col-lg-8">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="contact-us">
-                                <div class="contact-icon">
-                                    <i class="fa fa-map-o" aria-hidden="true"></i>
-                                </div>
-                                <!-- End contact Icon -->
-                                <div class="contact-info">
-                                    <p>22 Rue Ahmed Loukili V.N FES, Fez, Morocco</p>
-                                </div>
-                                <!-- End Contact Info -->
-                            </div>
-                            <!-- End Contact Us -->
-                        </div>
-                        <!-- End Col -->
-                        <div class="col-md-6">
-                            <div class="contact-us contact-us-last">
-                                <div class="contact-icon">
-                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-                                </div>
-                                <!-- End contact Icon -->
-                                <div class="contact-info">
-                                    <h3>Appelez-nous</h3>
-                                    <p>+212 5359-31468  </p>
-                                </div>
-                                <!-- End Contact Info -->
-                            </div>
-                            <!-- End Contact Us -->
-                        </div>
-                        <!-- End Col -->
-                    </div>
-                    <!-- End Contact Row -->
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6">
-                            <div class="footer-widget footer-left-widget">
-                                <div class="section-heading">
-                                    <h3>Liens rapides</h3>
-                                    <div class="animate-border border-black"></div>
-                                </div>
-                                <ul>
-                                    <li>
-                                    <a  href="accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
-                                    </li>
-                                    <li>
-                                    <a  href="produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
-                                    </li>
-                                    <li>
-                                    <a  href="paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
-                                   </li>
-                                  
-                                   <li>
-                                   <a  href="categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
-                                
-                                </ul>
-                                <ul>
-                                   <li>
-                                       <a  href="inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
-                                   </li>
-                                   <li>
-                                        <a href="contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
-                                   </li>
-                                </ul>
-                            </div>
-                            <!-- End Footer Widget -->
-                        </div>
-                        <!-- End col -->
-                        <div class="col-md-12 col-lg-6">
-                            <div class="footer-widget">
-                                
-                               
-                                <!-- End form -->
-                            </div>
-                            <!-- End footer widget -->
-                        </div>
-                        <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                </div>
-                <!-- End Col -->
+ <!-- Footer Start -->
+ <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                 <img src="img/axenett.png" alt="footer_logo" class="img-fluid">
+                </a>
+                <p>  Entreprise pour la vente d'ordinateurs, PC, imprimantes, installation réseaux et cameras de surveillance, accessoires informatiques, 
+                logiciels, applications et sites web.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>22 Rue Ahmed Loukili V.N FES, Fez, Morocco</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>axanet1@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+212 5359-31468</p>
             </div>
-            <!-- End Widget Row -->
-              <!-- Back to Top -->
-        </div>
-        <!-- End Contact Container -->
-
-
-   
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Liens rapides</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
+                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Produit</a>
+                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Panier</a>
+                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Catégorie</a>
+                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
+                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contacte</a>
+                        </div>
+                    </div>
+              
+                       
+                    <div class="col-lg-4 col-md-8 col-sm-8">
+                        <!-- ///////////////////////////// -->
+                                
+                  </div>
+                </div>
                 
-                    <div class="col-md-6">
-                    </div>
-                    <!-- End Col -->
-                    <div class="col-md-6">
-                        <div class="copyright-menu">
-                          
-                            <ul><br></br>
-                                <li>
-                                    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-                                </li>
-                              
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End col -->
-                </div>
-                <!-- End Row -->
+            </div>
             
-     
-</footer>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
+                    by
+                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
+                    Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+
+            
+        </div>
+        
+    </div>
+    <!-- Footer End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
