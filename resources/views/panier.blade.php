@@ -58,136 +58,129 @@
 
 
 
-
-
      <div class="col-lg-13">
 
 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-   <br></br>
-   <br></br>
-
-   <div class="site-logo">
-       <div class="col-lg-1 d-none d-lg-block">
-           <img  src="img/axenett - Copie.png" alt="" class="logo" href=""> 
-      </div>
-   </div>
-          
+             <div class="site-logo">
+                 <div class="col-lg-1 d-none d-lg-block">
+                     <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                 </div>
+             </div>
+                     
              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                  <span class="navbar-toggler-icon"></span>
              </button>
-             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link">Accueil</a>
-                     <a href="produits" class="nav-item nav-link active">Produits</a>
-                     <a href="categories" class="nav-item nav-link active">Catégories</a>
+                     <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                     <a href="produits" class="nav-item nav-link">Produits</a>
+                     
+                     <a href="categories" class="nav-item nav-link">Catégories</a>
                      <a href="contacts" class="nav-item nav-link">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
-                     <form action="">
-                         <div class="input-group">
-                             <input type="text" class="form-control" placeholder="Recherche">
-                             <div class="input-group-append">
-                                 <span class="input-group-text bg-transparent text-primary">
-                                     <i class="fa fa-search"></i>
-                                 </span>
-                             </div> 
-                             
-                             <div class="col-lg-2 col-6 text-right">
-                                        <a href="paniers" class="btn border">
-                                            <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge"></span>
-                                        </a>
+                     <form action=""> 
+
+                        <div class="input-group">
+                            <div class="col-lg-2 col-6 text-right">
+                                 <a href="paniers" class="btn border">
+                                     <i class="fas fa-shopping-cart text-primary"></i>
+                                     <span class="badge">0</span>
+                                 </a>  
+                            </div>
+                            <div class="input-grou">
+                               <div class="col-lg-2 col-6 text-right">
+                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                             <i class="fa fa-user text-primary" ></i>
+                                     </button>
+
                                  </div>
-                                
-                                
-                                 <div class="col-lg-2 col-6 text-right">
-
-                                        <button type="button" class="btn btn border" data-toggle="modal" data-target="#authModal">
-                                        <i class="fa fa-user text-primary" ></i>
-                                        </button>
-
-                                               <!-- Modal -->
-                                    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                            </li>
-                                            </ul>
-
-                                            <!-- Tab content -->
-                                            <div class="tab-content">
-                                            <!-- Connexion -->
-                                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                <form id="loginForm">
-                                                <div class="form-group">
-                                                    <label for="loginEmail" class="text-black">Email</label>
-                                                    <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="loginPassword" class="text-black">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                </form>
-                                            </div>
-
-                                            <!-- Inscription -->
-                                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                <form id="registerForm">
-                                                <div class="form-group">
-                                                    <label for="registerName" class="text-black">Nom</label>
-                                                    <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerEmail" class="text-black">Email</label>
-                                                    <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="registerPassword" class="text-black">Mot de passe</label>
-                                                    <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
-                                                </form>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                 </div>
-
-                                <!-- Contenu existant de votre navbar -->
-
-                                    <!-- Inclure FontAwesome -->
-                                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
-
-                              </div>  
-
-
-                              
-                            </form>
+                           </div>
                             
-                     </div> 
-                 </div>
-      
+                         </div>      
+                         
+                          
+                                
+                                        <!-- Modal -->
+                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                         </h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <!-- Nav tabs -->
+                                         <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                         <li class="nav-item">
+                                             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                         </li>
+                                         </ul>
 
-    </div>
-</nav>
+                                         <!-- Tab content -->
+                                         <div class="tab-content">
+                                             <!-- Connexion -->
+                                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                 <form id="loginForm">
+                                                 <div class="form-group">
+                                                     <label for="loginEmail">Email</label>
+                                                     <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="loginPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                 </form>
+                                             </div>
+
+                                             <!-- Inscription -->
+                                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                 <form id="registerForm">
+                                                 <div class="form-group">
+                                                     <label for="registerName">Nom</label>
+                                                     <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerEmail">Email</label>
+                                                     <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 </form>
+                                             </div>
+                                     </div>
+                                 </div>
+                          </div>
+                      </div>
+                  </div>
+                        
+
+                         <!-- Contenu existant de votre navbar -->
+
+                             <!-- Inclure FontAwesome -->
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+
+                       </div>  
+
+
+                       
+                     </form>
+              </div>  
+             
+                     
+      </div> 
+ </nav>
 </div>
     <!-- Topbar End -->
     <!-- Page Header Start -->
@@ -202,6 +195,186 @@
         </div>
     </div>
     <!-- Page Header End -->
+
+
+
+
+
+
+
+
+ <!-- Shop Cart Section Begin -->
+ <section class="shop-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="img/shop-cart/cp-1.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Chain bucket bag</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 150.0</td>
+                                    <td class="cart__quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="cart__total">$ 300.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="img/shop-cart/cp-2.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Zip-pockets pebbled tote briefcase</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 170.0</td>
+                                    <td class="cart__quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="cart__total">$ 170.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="img/shop-cart/cp-3.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Black jean</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 85.0</td>
+                                    <td class="cart__quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="cart__total">$ 170.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="img/shop-cart/cp-4.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Cotton Shirt</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 55.0</td>
+                                    <td class="cart__quantity">
+                                        <div class="pro-qty">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="cart__total">$ 110.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="cart__btn">
+                        <a href="#">Continue Shopping</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="cart__btn update__btn">
+                        <a href="#"><span class="icon_loading"></span> Update cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="discount__content">
+                        <h6>Discount codes</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your coupon code">
+                            <button type="submit" class="site-btn">Apply</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-2">
+                    <div class="cart__total__procced">
+                        <h6>Cart total</h6>
+                        <ul>
+                            <li>Subtotal <span>$ 750.0</span></li>
+                            <li>Total <span>$ 750.0</span></li>
+                        </ul>
+                        <a href="#" class="primary-btn">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Cart Section End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    

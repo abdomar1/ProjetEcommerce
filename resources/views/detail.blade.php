@@ -24,7 +24,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
     <link href="css/footer.css" rel="stylesheet" />
 
 
@@ -79,7 +78,7 @@
              </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                     <a href="accueils" class="nav-item nav-link">Accueil</a>
                      <a href="produits" class="nav-item nav-link">Produits</a>
                      
                      <a href="categories" class="nav-item nav-link">Catégories</a>
@@ -286,18 +285,18 @@
  <section class="product-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                <div class="product__details__pic">
-                        <div class="product__details__slider__content">
-                            <div class="product__details__pic__slider owl-carousel">
-                                <img data-hash="product-1" class="product__big__img" src="img/product/details/product-1.jpg" alt="">
-                                <img data-hash="product-2" class="product__big__img" src="img/product/details/product-3.jpg" alt="">
-                                <img data-hash="product-3" class="product__big__img" src="img/product/details/product-2.jpg" alt="">
-                                <img data-hash="product-4" class="product__big__img" src="img/product/details/product-4.jpg" alt="">
-                            </div>
+            
+                <div class="col-lg-5 pb-5">
+                <div id="product-carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="w-55" src="img/product01.png" alt="Image">
                         </div>
+                      
                     </div>
                 </div>
+            </div>
+
                 <div class="col-lg-6">
                     <div class="product__details__text">
                         <h3>Essential structured blazer <span>Brand: SKMEIMore Men Watches from SKMEI</span></h3>
@@ -352,97 +351,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="related__title">
-                        <h5>RELATED PRODUCTS</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-1.jpg">
-                            <div class="label new">New</div>
-                            <ul class="product__hover">
-                                <li><a href="img/cat-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Buttons tweed blazer</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-2.jpg">
-                            <ul class="product__hover">
-                                <li><a href="img/product/related/rp-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Flowy striped skirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-3.jpg">
-                            <div class="label stockout">out of stock</div>
-                            <ul class="product__hover">
-                                <li><a href="img/product/related/rp-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Cotton T-Shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-4.jpg">
-                            <ul class="product__hover">
-                                <li><a href="img/product/related/rp-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Slim striped pocket shirt</a></h6>
-                           
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
     <!-- Product Details Section End -->
@@ -450,98 +359,47 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Products Start -->
-    <div class="container-fluid py-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Vous aimerez peut-être aussi</span></h2>
-        </div>
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel related-carousel">
-                    <div class="card product-item border-0">
-                        <div class="col-12 pb-1">
-                                <div class="row">
-                                <div class="card border-0 shadow-sm position-relative">
-                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                        </div>
-                                    
-                                    </div>  <div class="mb text-center">
-                                            <h4 class="mb-0">Produit 1</h4>
-                                            <h6 class="mb-0">$123.00</h6>
-                                        </div>
-                                </div>
+<div class="container-fluid py-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Vous aimerez peut-être aussi</span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="owl-carousel product-carousel">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="img/product01.png" class="product-image" alt="Produit 1">
+                        <div class="product-overlay">
+                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                         </div>
                     </div>
-                    <div class="card product-item border-0">
-                          <div class="col-12 pb-1">
-                                <div class="row">
-                                <div class="card border-0 shadow-sm position-relative">
-                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                        </div>
-                                    
-                                    </div>  <div class="mb text-center">
-                                            <h4 class="mb-0">Produit 1</h4>
-                                            <h6 class="mb-0">$123.00</h6>
-                                        </div>
-                                </div>
-                                    </div>
-                        </div>
+                    <div class="product-info text-center">
+                        <h4 class="product-title mb-0">Produit 1</h4>
+                        <h6 class="product-price mb-0">$123.00</h6>
                     </div>
-                   
                 </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="img/product02.png" class="product-image" alt="Produit 2">
+                        <div class="product-overlay">
+                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                        </div>
+                    </div>
+                    <div class="product-info text-center">
+                        <h4 class="product-title mb-0">Produit 2</h4>
+                        <h6 class="product-price mb-0">$150.00</h6>
+                    </div>
+                </div>
+                <!-- Ajoute d'autres produits ici -->
             </div>
         </div>
     </div>
-    <!-- Products End -->
-
-     <br></br>
-     <br></br>
-     <br></br>
+</div>
+<!-- Products End -->
+<br></br>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->

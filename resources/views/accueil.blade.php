@@ -252,63 +252,47 @@
   </div>
 
 
-<!-- Products Start -->
-<div class="container-fluid pt-5">
+   <!-- Products Start -->
+   <div class="container-fluid py-5">
     <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Produits Populaires</span></h2>
+        <h2 class="section-title px-5"><span class="px-2">Vous aimerez peut-être aussi</span></h2>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card border-0 shadow-sm position-relative">
-                    <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                        <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                        <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="owl-carousel product-carousel">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="img/product01.png" class="product-image" alt="Produit 1">
+                        <div class="product-overlay">
+                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                        </div>
                     </div>
-                  
-                </div>  <div class="card-footer text-center">
-                        <h5 class="mb-0">Produit 1</h5>
-                        <h6 class="mb-0">$123.00</h6>
+                    <div class="product-info text-center">
+                        <h4 class="product-title mb-0">Produit 1</h4>
+                        <h6 class="product-price mb-0">$123.00</h6>
                     </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="img/product02.png" class="product-image" alt="Produit 2">
+                        <div class="product-overlay">
+                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                        </div>
+                    </div>
+                    <div class="product-info text-center">
+                        <h4 class="product-title mb-0">Produit 2</h4>
+                        <h6 class="product-price mb-0">$150.00</h6>
+                    </div>
+                </div>
+                <!-- Ajoute d'autres produits ici -->
             </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm position-relative">
-                <img src="img/product02.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                    <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                    <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                </div>
-              
-            </div>  <div class="card-footer text-center">
-                    <h5 class="mb-0">Produit 2</h5>
-                    <h6 class="mb-0">$123.00</h6>
-                </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm position-relative">
-                <img src="img/product03.png" class="card-img-top img-fluid rounded" alt="Produit 3">
-                <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                    <a href="#" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                    <a href="#" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-             </div>
-               
-            </div> <div class="card-footer text-center">
-                    <h5 class="mb-0">Produit 3</h5>
-                    <h6 class="mb-0">$123.00</h6>
-                </div>
-        </div> 
-                
-       
     </div>
-   
-        </div><div class="text-center mt-4">
-            <a href="categories.html" class="btn btn-sm text-dark p-0">                  
-                <a href="produits" class="btn btn-warning mt-2"> Voir toutes les Produits </a>
-            </a>
-      </div>
-<br></br>
+</div>
 <!-- Products End -->
+
 
 
 

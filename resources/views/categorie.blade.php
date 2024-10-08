@@ -79,7 +79,7 @@
              </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                     <a href="accueils" class="nav-item nav-link">Accueil</a>
                      <a href="produits" class="nav-item nav-link">Produits</a>
                      
                      <a href="categories" class="nav-item nav-link active">Catégories</a>

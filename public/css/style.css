@@ -5904,6 +5904,7 @@ Table OF Contents
         .navbar-nav .nav-link {
             padding-right: 0;
             padding-left: 0;
+            margin-right: 0;
         }
         
         .navbar-nav .dropdown-menu {
@@ -12051,23 +12052,6 @@ Table OF Contents
             object-fit: cover;
             /* Garde le ratio d'aspect sans écraser l'image */
         }
-        
-        .mb {
-            border-radius: 10px;
-        }
-        
-        .mb h4 {
-            margin-top: 5px;
-            padding-bottom: 15px;
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #000;
-        }
-        
-        .mb h6 {
-            margin-bottom: 0;
-            padding-bottom: 15px;
-        }
         /* Style pour le nom du produit */
         
         .card-footer h5 {
@@ -12690,6 +12674,7 @@ inscri
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom: 12px;
+            margin-top: 100px;
         }
         
         .product__details__text h3 span {
@@ -12725,7 +12710,7 @@ inscri
         .product__details__price {
             font-size: 30px;
             font-weight: 600;
-            color: #ca1515;
+            color: #cf4401;
             margin-bottom: 30px;
         }
         
@@ -12898,3 +12883,207 @@ inscri
         .qty-input:focus {
             outline: none;
         }
+        
+        .product__details__tab {
+            padding-top: 80px;
+            margin-bottom: 65px;
+        }
+        
+        .nav-item {
+            margin-right: 46px;
+        }
+        
+        .nav-item:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-item .nav-link {
+            font-size: 18px;
+            color: #666666;
+            font-weight: 600;
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 0;
+        }
+        
+        .nav-item .nav-link.active {
+            color: #111111;
+        }
+        
+        .nav-item .nav-link {
+            font-size: 18px;
+            color: #666666;
+            font-weight: 600;
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 0;
+        }
+        
+        .nav-item .nav-link.active {
+            color: #111111;
+        }
+        
+        .tab-content .tab-pane h6 {
+            color: #666666;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .tab-content .tab-pane p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tab-content .tab-pane h6 {
+            color: #666666;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .tab-content .tab-pane p {
+            color: #000;
+            margin-bottom: 24px;
+        }
+        
+        .tab-content .tab-pane p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .nav {
+            border-bottom: none;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .nav::before {
+            position: absolute;
+            left: 0;
+            top: 13px;
+            height: 1px;
+            width: 335px;
+            background: #e1e1e1;
+            content: "";
+        }
+        
+        .nav::after {
+            position: absolute;
+            right: 0;
+            top: 13px;
+            height: 1px;
+            width: 335px;
+            background: #e1e1e1;
+            content: "";
+        }
+        
+        .nav-item {
+            margin-right: 46px;
+        }
+        
+        .nav-item:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-item .nav-link {
+            font-size: 18px;
+            color: #666666;
+            font-weight: 600;
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 0;
+        }
+        
+        .nav-item .nav-link.active {
+            color: #111111;
+        }
+        /* ///////////////////////////produit dans detail */
+        
+        .product-carousel {
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-card {
+            border: none;
+            margin: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Transition pour la mise à l'échelle et l'ombre */
+        }
+        
+        .product-card:hover {
+            transform: scale(1.05);
+            /* Agrandissement au survol */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            /* Ombre au survol */
+        }
+        
+        .product-image-container {
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            /* Pour s'assurer que l'image remplit le conteneur */
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+            /* Transition pour l'image */
+        }
+        
+        .product-overlay {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Couleur de fond noir semi-transparent */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+            /* Transition pour l'overlay */
+        }
+        
+        .product-image-container:hover .product-overlay {
+            opacity: 1;
+            /* Affiche l'overlay au survol */
+        }
+        
+        .product-info {
+            padding: 15px;
+            transition: transform 0.3s ease;
+            /* Transition pour le texte */
+        }
+        
+        .product-card:hover .product-info {
+            transform: translateY(5px);
+            /* Légère translation du texte au survol */
+        }
+        
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            /* Transition pour la couleur */
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #ff9900;
+            /* Couleur de prix */
+            transition: color 0.3s ease;
+            /* Transition pour la couleur */
+        }
+        /* -----image de produit detail-------------------- */

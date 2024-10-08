@@ -19,8 +19,7 @@ return new class extends Migration
 
             $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
             $table->decimal('total', 10, 2);
-            $table->string('status');
-            $table->dateTime('dateCmd');
+            $table->enum('status', ['en attente', 'en cours', 'livrée', 'annulée']);
         });
     }
 

@@ -88,7 +88,7 @@
     $('.quantity button').on('click', function() {
         var button = $(this);
         var oldValue = button.parent().parent().find('input').val();
-        if (button.hasClass('btn-plus')) {
+        if (button.hasClass('qty-btn plus')) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
             if (oldValue > 0) {
@@ -99,35 +99,5 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
-
-
-
-
-
-
-
-
-
-
-    // Sélection des boutons et du champ d'entrée
-    const qtyBtns = document.querySelectorAll('.qty-btn');
-    const qtyInput = document.querySelector('.qty-input');
-
-    // Ajout d'un écouteur d'événement pour chaque bouton
-    qtyBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            let currentQty = parseInt(qtyInput.value);
-
-            // Si le bouton cliqué est le bouton "plus"
-            if (this.classList.contains('plus')) {
-                qtyInput.value = currentQty + 1; // Incrémentation de la quantité
-            }
-            // Si le bouton cliqué est le bouton "moins" et que la quantité est supérieure à 1
-            else if (this.classList.contains('minus') && currentQty > 1) {
-                qtyInput.value = currentQty - 1; // Décrémentation de la quantité
-            }
-        });
-    });
-
 
 })(jQuery);

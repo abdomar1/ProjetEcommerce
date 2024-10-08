@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete(); // FK vers `commandes`
-            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete(); // FK vers `produits`
+            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
+            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `produits`
             $table->integer('quantite');
             $table->decimal('prixUnit', 15, 5);
         });

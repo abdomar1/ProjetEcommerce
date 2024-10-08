@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete();; // FK vers `commandes`
+            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
             $table->decimal('montant', 10, 3);
-            $table->string('modePaim'); // exemple: carte, paypal
+            $table->enum('modePaim',['card', 'paypal', 'bank_transfer']);
             $table->dateTime('datePaim');
         
         });
