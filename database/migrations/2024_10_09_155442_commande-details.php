@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commandes', function (Blueprint $table) {
+        Schema::create('commande-details', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
-            $table->decimal('total', 10, 2);
-            $table->enum('status', ['en attente', 'en cours', 'livrée', 'annulée']);
+            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
+            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `produits`
+            $table->integer('quantite');
+            $table->decimal('prixUnit', 15, 3);
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commandes');
+        //
     }
 };

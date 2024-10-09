@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('paniers', function (Blueprint $table) {
+        Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('qtePan');
 
-            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate();
-
+            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
+            $table->decimal('total', 10, 2);
+            $table->enum('status', ['en attente', 'en cours', 'livrée', 'annulée']);
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paniers');
+        //
     }
 };

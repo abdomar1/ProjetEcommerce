@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commande-details', function (Blueprint $table) {
+        Schema::create('paiements', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
             $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
-            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `produits`
-            $table->integer('quantite');
-            $table->decimal('prixUnit', 15, 5);
+            $table->decimal('montant', 10, 3);
+            $table->enum('modePaim',['carte bancaire', 'espèces', 'virement bancaire']);
+            $table->dateTime('datePaim');
+        
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commande-details');
+        //
     }
 };
