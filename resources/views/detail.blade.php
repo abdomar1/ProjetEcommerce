@@ -318,7 +318,7 @@
 
 
 
-                            <a href="#" class="cart-btn"><span class="fa fa-shopping-cart mr-1"></span>Ajouter au panier</a>
+                            <a href="paniers" class="cart-btn"><span class="fa fa-shopping-cart mr-1"></span>Ajouter au panier</a>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
             $table->decimal('montant', 10, 3);
-            $table->enum('modePaim',['card', 'paypal', 'bank_transfer']);
+            $table->enum('modePaim',['carte bancaire', 'espèces', 'virement bancaire']);
             $table->dateTime('datePaim');
         
         });

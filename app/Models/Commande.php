@@ -19,6 +19,9 @@ class Commande extends Model
         return $this->belongsTo(Utilisateur::class, 'idUtil');
         //indiquant qu'un utilisateur passee à un commande. 
     }
-
+    public function paiements()
+    {
+        return $this->hasMany(Paiement::class, 'idCmd'); // Une commande peut avoir plusieurs paiements
+    }
     
 }

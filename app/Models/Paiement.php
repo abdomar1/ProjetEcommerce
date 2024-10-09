@@ -8,5 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Paiement extends Model
 {
     use HasFactory;
-    
+
+    protected $fillable = [
+        'idCmd',      
+        'montant',    
+        'modePaim',   
+        'datePaim',   
+    ];
+
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class, 'idCmd'); // Un paiement est lié à une commande
+    }
 }
