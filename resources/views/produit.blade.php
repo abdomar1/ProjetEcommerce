@@ -86,28 +86,37 @@
                  <div class="col-lg-6 col-6 text-left">
                      <form action=""> 
 
-                        <div class="input-group">
-                            <div class="col-lg-2 col-6 text-right">
-                                 <a href="paniers" class="btn border">
-                                     <i class="fas fa-shopping-cart text-primary"></i>
-                                     <span class="badge">0</span>
-                                 </a>  
-                            </div>
-                            <div class="input-grou">
-                               <div class="col-lg-2 col-6 text-right">
-                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
-                                             <i class="fa fa-user text-primary" ></i>
-                                     </button>
+                             <div class="input-group">
+                                  <div class="cart-button">
+                                        <a href="paniers" class="btn-cart">
+                                            <span  class="cart-icon"><i class="fas fa-shopping-cart text-primary"></i></span>
+                                            
+                                                <span class="cart-count">0</span>
+                                            </a>
+                                    </div>
+                                    <div class="input-grou">
+                                        <div class="col-lg-2 col-6 text-right">
+                                                <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                                        <i class="fa fa-user text-primary" ></i>
+                                                </button>
 
-                                 </div>
-                           </div>
-                            
-                         </div>      
+                                            </div>
+                                    </div>
+                             </div>        
                          
                           
                                 
                                         <!-- Modal -->
-                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+
+
+                                  
+
+
+
+
+
+                               <!-- Modal -->
+                               <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
                              <div class="modal-dialog">
                                  <div class="modal-content">
                                      <div class="modal-header">
@@ -160,7 +169,7 @@
                                                      <label for="registerPassword">Mot de passe</label>
                                                      <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
                                                  </div>
-                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
                                                  </form>
                                              </div>
                                      </div>
@@ -168,7 +177,10 @@
                           </div>
                       </div>
                   </div>
-                        
+
+
+
+                       
 
                          <!-- Contenu existant de votre navbar -->
 
@@ -198,14 +210,8 @@
       </div> 
  </nav>
 </div>
-
-
-
-
-
-
-
     <!-- Topbar End -->
+
 
     <!-- Page Header Start -->
     <div style="background-image:url('img/pc.jpg')">
@@ -221,142 +227,84 @@
     </div>
     <!-- Page Header End -->
 
-
-    <!-- Shop Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <!-- Shop Sidebar Start -->
-            <div class="col-lg-3 col-md-12">
-
-
-               <div class="border-bottom mb-4 pb-4">
-                    <h5 class="font-weight-semi-bold mb-4">Filter par Catégories</h5>
-                    <form>
-                       
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" checked id="color-1">
-                            <label class="custom-control-label" for="color-1">ALL</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="color-2">
-                            <label class="custom-control-label" for="color-2">PC</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="color-2">
-                            <label class="custom-control-label" for="color-2">Télephone</label>
-                        </div>
-                    </form>
+    <div class="filter-products-container">
+                <!-- Sidebar de filtrage par couleurs -->
+                <div class="color-filter-sidebar">
+                    <h4>Filtrer par Catégorie</h4>
+                    <div class="color-filter-options">
+                        <label class="color-primary-red">
+                            <input type="checkbox" checked id="color-red"> All
+                        </label>
+                        <label class="color-primary-red">
+                            <input type="checkbox" id="color-red"> PC
+                        </label>
+                        <label class="color-primary-blue">
+                            <input type="checkbox" id="color-blue"> Télèphone
+                        </label>
+                    </div>
+                    <br>
+                    <h4>Filtrer par Couleur</h4>
+                    <div class="color-filter-options">
+                        <label class="color-primary-black">
+                            <input type="checkbox" id="color-black"> Noir
+                        </label>
+                        <label class="color-primary-white">
+                            <input type="checkbox" id="color-white"> Blanc
+                        </label>
+                    </div>
+                    <h4>Filtrer par Prix</h4>
+                    <div class="color-filter-options">
+                        <label class="color-primary-black">
+                            <input type="checkbox" id="color-black"> $0 - $100
+                        </label>
+                        <label class="color-primary-white">
+                            <input type="checkbox" id="color-white"> $100 - $200
+                        </label>
+                    </div>
+                    <h4>Filtrer par Marque</h4>
+                    <div class="color-filter-options">
+                        <label class="color-primary-black">
+                            <input type="checkbox" id="color-black"> Deel
+                        </label>
+                        <label class="color-primary-white">
+                            <input type="checkbox" id="color-white"> Hp
+                        </label>
+                    </div>
+                    <h4>Filtrer par Marque</h4>
+                    <div class="color-filter-options">
+                        <label class="color-primary-black">
+                            <input type="checkbox" id="color-black"> Deel
+                        </label>
+                        <label class="color-primary-white">
+                            <input type="checkbox" id="color-white"> Hp
+                        </label>
+                    </div>
                 </div>
 
-
-               <!-- marque Start -->
-               <div class="mb-5">
-                    <h5 class="font-weight-semi-bold mb-4">Filtrer par marque</h5>
-                    <form>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="size-1">
-                            <label class="custom-control-label" for="size-1">Asus</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input"  id="size-1">
-                            <label class="custom-control-label" for="size-1">deel</label>
-                        </div>
-                    </form>
-                </div>
-                <!-- marque End -->
-                <!-- Price Start -->
-                <div class="border-bottom mb-4 pb-4">
-                    <h5 class="font-weight-semi-bold mb-4">Filtrer par prix</h5>
-                    <form>
-                     
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input"  id="price-1">
-                            <label class="custom-control-label" for="price-1" >$0 - $100</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-2">
-                            <label class="custom-control-label" for="price-2">$100 - $200</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="price-3">
-                            <label class="custom-control-label" for="price-3">$200 - $300</label>
-                        </div>
-                      
-                    </form>
-                </div>
-                <!-- Price End -->
-
-
-                
-                
-                <!-- Color Start -->
-                <div class="border-bottom mb-4 pb-4">
-                    <h5 class="font-weight-semi-bold mb-4">Filtrer par couleurs</h5>
-                    <form>
-                       
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input"  id="color-1">
-                            <label class="custom-control-label" for="color-1" c>Blanc</label>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="radio" class="custom-control-input" id="color-2">
-                            <label class="custom-control-label" for="color-2">Noir</label>
-                        </div>
-                    </form>
-                </div>
-                <!-- Color End -->
-            </div>
-            <!-- Shop Sidebar End -->
- 
-
-            <!-- Shop Product Start -->
-            <div class="col-lg-9 col-md-12">
-                    <div class="container-fluid pt-5">
-                        <div class="row">
-                             <div class="col-lg-4 col-md-6 mb-4">
-                                    <div class="card border-0 shadow-sm position-relative">
-                                        <img src="img/product01.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                                        <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                    <!-- Section des produits filtrés -->
+                    <div class="row px-xl-5">
+                        <div class="col">
+                            <div class="owl-carousel product-carousel">
+                                    <div class="product-card">
+                                        <div class="product-image-container"style="width: auto;">
+                                            <img src="img/product02.png" class="product-image" alt="Produit 2">
+                                            <div class="product-overlay" >
+                                                <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                                <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                            </div>
                                         </div>
-                                    
-                                    </div>  <div class="mb text-center">
-                                            <h4 class="mb-0">Produit 1</h4>
-                                            <h6 class="mb-0">$123.00</h6>
+                                        <div class="product-info text-center">
+                                            <h4 class="product-title mb-0">Produit 2</h4>
+                                            <h6 class="product-price mb-0">$150.00</h6>
                                         </div>
-                                </div>
+                                    </div>
+        
+                              </div>
+                      </div>
+                 </div>
 
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <img src="img/product02.png" class="card-img-top img-fluid rounded" alt="Produit 2">
-                                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                        <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                    </div>
-                                 
-                                </div>  <div class="mb text-center">
-                                        <h4 class="mb-0">Produit 2</h4>
-                                        <h6 class="mb-0">$123.00</h6>
-                                    </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="card border-0 shadow-sm position-relative">
-                                    <img src="img/product03.png" class="card-img-top img-fluid rounded" alt="Produit 3">
-                                    <div class="product-overlay text-white position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center opacity-0 transition">
-                                        <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                    </div>
-                                
-                                </div> <div class="mb text-center">
-                                        <h4 class="mb-0">Produit 3</h4>
-                                        <h6 class="mb-0">$123.00</h6>
-                                    </div>
-                            </div> 
-                        </div>
-                    <!-- Products End -->
-
-                    <br></br>
+</div>
+                        <!-- Ajoute d'autres cartes produit ici -->
                     <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">
                           <ul class="pagination justify-content-center mb-3">
@@ -378,13 +326,13 @@
                           </ul>
                         </nav>
                     </div>
-                </div>
-            </div>
+                
             <!-- Shop Product End -->
-        </div>
-    </div>
+      
     <!-- Shop End -->
 <br></br>
+<br></br>
+
 
 
     

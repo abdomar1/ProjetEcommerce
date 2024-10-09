@@ -72,7 +72,7 @@
              </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link active">Accueil</a>
+                     <a href="accueils" class="nav-item nav-link">Accueil</a>
                      <a href="produits" class="nav-item nav-link">Produits</a>
                      
                      <a href="categories" class="nav-item nav-link">Catégories</a>
@@ -82,27 +82,33 @@
                  <div class="col-lg-6 col-6 text-left">
                      <form action=""> 
 
-                        <div class="input-group">
-                            <div class="col-lg-2 col-6 text-right">
-                                 <a href="paniers" class="btn border">
-                                     <i class="fas fa-shopping-cart text-primary"></i>
-                                     <span class="badge">0</span>
-                                 </a>  
-                            </div>
-                            <div class="input-grou">
-                               <div class="col-lg-2 col-6 text-right">
-                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
-                                             <i class="fa fa-user text-primary" ></i>
-                                     </button>
+                     <div class="input-group">
+                                  
+                                  <div class="cart-button">
+                                        <a href="paniers" class="btn-cart">
+                                            <span  class="cart-icon"><i class="fas fa-shopping-cart text-primary"></i></span>
+                                            
+                                                <span class="cart-count">0</span>
+                                            </a>
+                                    </div>
+                                    <div class="input-grou">
+                                        <div class="col-lg-2 col-6 text-right">
+                                                <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                                        <i class="fa fa-user text-primary" ></i>
+                                                </button>
 
-                                 </div>
-                           </div>
-                            
+                                            </div>
+                                    </div>
+
                          </div>      
-                         
                           
-                                
-                                        <!-- Modal -->
+                            
+
+
+
+
+
+                               <!-- Modal -->
                        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
                              <div class="modal-dialog">
                                  <div class="modal-content">
@@ -156,7 +162,7 @@
                                                      <label for="registerPassword">Mot de passe</label>
                                                      <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
                                                  </div>
-                                                 <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                                                 <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
                                                  </form>
                                              </div>
                                      </div>
@@ -165,6 +171,28 @@
                       </div>
                   </div>
                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                          <!-- Contenu existant de votre navbar -->
 
@@ -210,11 +238,11 @@
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
                         <table>
-                            <thead>
+                            <thead class="table-bordered">
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
+                                    <th>Produit</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
                                     <th>Total</th>
                                     <th></th>
                                 </tr>
@@ -222,95 +250,59 @@
                             <tbody>
                                 <tr>
                                     <td class="cart__product__item">
-                                        <img src="img/shop-cart/cp-1.jpg" alt="">
+                                        <img src="img/cat-4.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Chain bucket bag</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
+                                            <h6>Caméra</h6>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 150.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
+                                    <td class="cart__price">$ 250.0</td>
+                                    
+                           <td>   <div class="quantity">
+                                <div class="pro-qty">
+                                    <button class="qty-btn minus">-</button>
+                                    <input type="text" value="1" class="qty-input">
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                            </div>
+                                
                                     </td>
-                                    <td class="cart__total">$ 300.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                    <!-- <td></td> -->
+                                    <td class="cart__total">$ 4100.0</td>
+                                    <td class="cart__close"><span class="bi bi-trash-fill">
+                                        
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                        </svg>
+                                    </span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
-                                        <img src="img/shop-cart/cp-2.jpg" alt="">
+                                        <img src="img/cat-4.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Zip-pockets pebbled tote briefcase</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
+                                            <h6>Caméra</h6>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 170.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
+                                    <td class="cart__price">$ 250.0</td>
+                                    
+                           <td>   <div class="quantity">
+                                <div class="pro-qty">
+                                    <button class="qty-btn minus">-</button>
+                                    <input type="text" value="1" class="qty-input">
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                            </div>
+                                
                                     </td>
-                                    <td class="cart__total">$ 170.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart__product__item">
-                                        <img src="img/shop-cart/cp-3.jpg" alt="">
-                                        <div class="cart__product__item__title">
-                                            <h6>Black jean</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 85.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 170.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart__product__item">
-                                        <img src="img/shop-cart/cp-4.jpg" alt="">
-                                        <div class="cart__product__item__title">
-                                            <h6>Cotton Shirt</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 55.0</td>
-                                    <td class="cart__quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="cart__total">$ 110.0</td>
-                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                    <!-- <td></td> -->
+                                    <td class="cart__total">$ 4100.0</td>
+                                    <td class="cart__close"><span class="bi bi-trash-fill">
+                                        
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                        </svg>
+                                    </span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -318,35 +310,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="cart__btn">
-                        <a href="#">Continue Shopping</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="cart__btn update__btn">
-                        <a href="#"><span class="icon_loading"></span> Update cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
                     <div class="discount__content">
-                        <h6>Discount codes</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your coupon code">
-                            <button type="submit" class="site-btn">Apply</button>
-                        </form>
+                      <!-- ////////////////////// -->
                     </div>
                 </div>
+            
                 <div class="col-lg-4 offset-lg-2">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="font-weight-semi-bold m-0">Résumé du panier</h4>
+                    </div>
                     <div class="cart__total__procced">
-                        <h6>Cart total</h6>
                         <ul>
-                            <li>Subtotal <span>$ 750.0</span></li>
                             <li>Total <span>$ 750.0</span></li>
+                            <li>Frait de Livraison <span>$ 3</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">Proceed to checkout</a>
+                        <div class="text-center mt-4">
+                        <a href="categories.html" class="btn btn-sm text-dark p-0">                  
+                            <a href="inscriptions" class="btn btn-warnin mt-2"> Passer la Commande </a>
+
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -354,107 +338,6 @@
     </section>
     <!-- Shop Cart Section End -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-<!-- Cart Start -->
-<div class="container-fluid pt-5">
-    <div class="row px-xl-5">
-        <div class="col-lg-8 table-responsive mb-5">
-  
-        <table class="table table-bordered text-center mb-0">
-                    <thead class="bg-secondary text-dark">
-                        <tr>
-                            <th>Produits</th>
-                            <th>Prix</th>
-                            <th>Quantité</th>
-                            <th>Totale</th>
-                            <th>Supprimer</th>
-                        </tr>
-                    </thead>
-                    <tbody class="align-middle">
-                        <tr>
-                            <td class="align-middle"><img src="img/product01.png" alt="" style="width: 50px;"> produit 1</td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">$150</td>
-                            <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                            <div class="card border-secondary mb-5">
-                                <tr>
-                            <tr>
-                    
-                        </tr>
-                        
-                       
-                    </tbody>
-                </table>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card border-0 mb-5 shadow">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="font-weight-semi-bold m-0">Résumé du panier</h4>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between mb-3">
-                        <h6 class="font-weight-medium">Total</h6>
-                        <h6 class="font-weight-medium">$150</h6>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-medium">Frais de livraison</h6>
-                        <h6 class="font-weight-medium">$10</h6>
-                    </div>
-                </div>
-                <div class="card-footer border-0 bg-transparent">
-                    <div class="d-flex justify-content-between mt-2">
-                        <h5 class="font-weight-bold">Total</h5>
-                        <h5 class="font-weight-bold">$160</h5>
-                    </div>
-                    <a href="inscriptions">
-                        <button class="btn btn-block btn-primary my-3 py-3">Passer à la caisse</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Cart End -->
 <br></br>
 
 

@@ -83,24 +83,25 @@
                  <div class="col-lg-6 col-6 text-left">
                      <form action=""> 
 
-                        <div class="input-group">
-                            <div class="col-lg-2 col-6 text-right">
-                                 <a href="paniers" class="btn border">
-                                     <i class="fas fa-shopping-cart text-primary"></i>
-                                     <span class="badge">0</span>
-                                 </a>  
-                            </div>
-                            <div class="input-grou">
-                               <div class="col-lg-2 col-6 text-right">
-                                     <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
-                                             <i class="fa fa-user text-primary" ></i>
-                                     </button>
+                     <div class="input-group">
+                                  
+                                  <div class="cart-button">
+                                        <a href="paniers" class="btn-cart">
+                                            <span  class="cart-icon"><i class="fas fa-shopping-cart text-primary"></i></span>
+                                            
+                                                <span class="cart-count">0</span>
+                                            </a>
+                                    </div>
+                                    <div class="input-grou">
+                                        <div class="col-lg-2 col-6 text-right">
+                                                <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                                        <i class="fa fa-user text-primary" ></i>
+                                                </button>
 
-                                 </div>
-                           </div>
-                            
+                                            </div>
+                                    </div>
+
                          </div>      
-                         
                           
                                 
                                         <!-- Modal -->

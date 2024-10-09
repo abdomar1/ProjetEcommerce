@@ -36,7 +36,7 @@
 <body>
 
       <!-- Header Top Area Start -->
-      <section class="gauto-header-top-area">
+      <section class="gauto-header-top-area" >
         <div class="container">
            <div class="row">
               <div class="col-md-4">
@@ -87,88 +87,96 @@
                             <form action=""> 
 
                                <div class="input-group">
-                                   <div class="col-lg-2 col-6 text-right">
-                                        <a href="paniers" class="btn border">
-                                            <i class="fas fa-shopping-cart text-primary"></i>
-                                            <span class="badge">0</span>
-                                        </a>  
-                                   </div>
-                                   <div class="input-grou">
-                                      <div class="col-lg-2 col-6 text-right">
-                                            <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
-                                                    <i class="fa fa-user text-primary" ></i>
-                                            </button>
-
+                                  
+                                      <div class="cart-button">
+                                            <a href="paniers" class="btn-cart">
+                                                <span  class="cart-icon"><i class="fas fa-shopping-cart text-primary"></i></span>
+                                                
+                                                    <span class="cart-count">0</span>
+                                                </a>
                                         </div>
-                                  </div>
-                                   
-                                </div>      
-                                
+                                        <div class="input-grou">
+                                            <div class="col-lg-2 col-6 text-right">
+                                                    <button type="button" class="btn border" data-toggle="modal" data-target="#authModal">
+                                                            <i class="fa fa-user text-primary" ></i>
+                                                    </button>
+
+                                                </div>
+                                        </div>
+
+                             </div>      
+      
+                                                                                                
+                                                            
                                  
-                                       
-                                               <!-- Modal -->
-                              <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <!-- Nav tabs -->
-                                                <ul class="nav nav-tabs" id="authTab" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
-                                                </li>
-                                                </ul>
 
-                                                <!-- Tab content -->
-                                                <div class="tab-content">
-                                                    <!-- Connexion -->
-                                                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                                        <form id="loginForm">
-                                                        <div class="form-group">
-                                                            <label for="loginEmail">Email</label>
-                                                            <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="loginPassword">Mot de passe</label>
-                                                            <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                                                        </form>
-                                                    </div>
 
-                                                    <!-- Inscription -->
-                                                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                                        <form id="registerForm">
-                                                        <div class="form-group">
-                                                            <label for="registerName">Nom</label>
-                                                            <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="registerEmail">Email</label>
-                                                            <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="registerPassword">Mot de passe</label>
-                                                            <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
-                                                        </form>
-                                                    </div>
-                                            </div>
-                                        </div>
+
+
+
+                           
+                               <!-- Modal -->
+                       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="authModalLabel"> <i class="fa fa-user text-primary" ></i>
+                                         </h5>
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class="modal-body">
+                                         <!-- Nav tabs -->
+                                         <ul class="nav nav-tabs" id="authTab" role="tablist">
+                                         <li class="nav-item">
+                                             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                                         </li>
+                                         <li class="nav-item">
+                                             <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                                         </li>
+                                         </ul>
+
+                                         <!-- Tab content -->
+                                         <div class="tab-content">
+                                             <!-- Connexion -->
+                                             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                                 <form id="loginForm">
+                                                 <div class="form-group">
+                                                     <label for="loginEmail">Email</label>
+                                                     <input type="email" class="form-control" id="loginEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="loginPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="loginPassword" placeholder="Votre mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                                                 </form>
+                                             </div>
+
+                                             <!-- Inscription -->
+                                             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                                 <form id="registerForm">
+                                                 <div class="form-group">
+                                                     <label for="registerName">Nom</label>
+                                                     <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerEmail">Email</label>
+                                                     <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="registerPassword">Mot de passe</label>
+                                                     <input type="password" class="form-control" id="registerPassword" placeholder="Créer un mot de passe" required>
+                                                 </div>
+                                                 <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+                                                 </form>
+                                             </div>
+                                     </div>
                                  </div>
-                             </div>
-                         </div>
-                               
+                          </div>
+                      </div>
+                  </div>
 
                                 <!-- Contenu existant de votre navbar -->
 
@@ -215,7 +223,7 @@
                                               
                     </p>
                     <div class="btn-box">
-                      <a href="produits" class="btn-2">Achetez Maintenant</a>
+                      <a href="produits" class="btn btn-warning mt-2">Achetez Maintenant</a>
                     </div>
                   </div>
                 </div>
@@ -236,7 +244,7 @@
                     Engagés à vous offrir la meilleure qualité du marché       
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn-2">Achete Maintenant</a>
+                      <a href="produits" class="btn btn-warning mt-2">Achete Maintenant</a>
                     </div>
                   </div>
                 </div>
@@ -287,7 +295,14 @@
                     </div>
                 </div>
                 <!-- Ajoute d'autres produits ici -->
-            </div>
+
+             
+            </div>   
+              <div class="text-center mt-4">
+                    <a href="" class="btn btn-sm text-dark p-0">                  
+                    <a href="produits" class="btn btn-warning mt-2"> Voir toutes les Produits </a>
+                    </a>
+                </div>
         </div>
     </div>
 </div>
