@@ -262,50 +262,43 @@
 
    <!-- Products Start -->
    <div class="container-fluid py-5">
-    <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Vous aimerez peut-être aussi</span></h2>
-    </div>
-    <div class="row px-xl-5">
-        <div class="col">
-            <div class="owl-carousel product-carousel">
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="img/product01.png" class="product-image" alt="Produit 1">
-                        <div class="product-overlay">
-                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                        </div>
-                    </div>
-                    <div class="product-info text-center">
-                        <h4 class="product-title mb-0">Produit 1</h4>
-                        <h6 class="product-price mb-0">$123.00</h6>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="img/product02.png" class="product-image" alt="Produit 2">
-                        <div class="product-overlay">
-                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                        </div>
-                    </div>
-                    <div class="product-info text-center">
-                        <h4 class="product-title mb-0">Produit 2</h4>
-                        <h6 class="product-price mb-0">$150.00</h6>
-                    </div>
-                </div>
-                <!-- Ajoute d'autres produits ici -->
-
-             
-            </div>   
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Les Produits</span></h2>
+        </div>
+       <div class="row px-xl-5">
+   
+           <div class="col">
+        
+                @foreach($derniersProduits as $produit)
+                    <div class="owl-carousel product-carousel">
+                         <div class="product-card">
+                                <div class="product-image-container">
+                                    <img src="{{ asset('img/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nomP }}"
+                                    >
+                                    <div class="product-overlay">
+                                        <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                    </div>
+                                </div>
+                                <div class="product-info text-center">
+                                    <h4 class="product-title mb-0">
+                                        {{ $produit->nomP }}
+                                   </h4>
+                                    <h6 class="product-price mb-0">
+                                        {{ number_format($produit->prix, 2) }}
+                                    </h6>
+                                </div>
+                         </div>
+                   </div>   
+               @endforeach
               <div class="text-center mt-4">
                     <a href="" class="btn btn-sm text-dark p-0">                  
                     <a href="produits" class="btn btn-warning mt-2"> Voir toutes les Produits </a>
                     </a>
                 </div>
-        </div>
-    </div>
-</div>
+           </div>
+       </div>
+  </div>
 <!-- Products End -->
 
 
@@ -355,45 +348,19 @@
 				<!-- row -->
 				<div class="row">
 					<!-- shop -->
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Voir <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- /shop -->
-                    <div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-                    <!-- ///// -->
-				
-                    <div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="#" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-				
+                    @foreach($derniersCategories as $categorie)
+                        <div class="col-md-4 col-xs-6">
+                            <div class="shop">
+                                <div class="shop-img">
+                                    <img src="{{ asset('img/' . $categorie->imageCate) }}" alt="">
+                                </div>
+                                <div class="shop-body">
+                                    <h3>{{ $categorie->nomC }}<br>Collection</h3>
+                                    <a href="#" class="cta-btn">Voir<i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 				</div>
 				<!-- /row -->
 
@@ -405,17 +372,12 @@
 
     </a>
 </div>
-
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
     <!-- Categories End -->
 
     <br></br>
-
-
-
-   
 <!-- service section -->
 <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Notre Services</span></h2>
@@ -425,7 +387,7 @@
         <div class="row justify-content-md-center py-5 px-xl-5">
           
 
-<section class="service_section layout_padding">
+    <section class="service_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -452,10 +414,10 @@
             <i class="bi bi-reception-4"></i>
         
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reception-4" viewBox="0 0 16 16">
-  <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"/>
-</svg>
-</div>
-            <div class="detail-box">
+        <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+        </div>
+          <div class="detail-box">
               <h6>
               installation réseaux
               </h6>
@@ -471,8 +433,8 @@
             <i class="bi bi-code-slash"></i>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
-  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-</svg>
+                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                </svg>
             </div>
             <div class="detail-box">
               <h6>
@@ -500,102 +462,102 @@
 
 
 
-       <!-- Instagram Begin -->
-<div class="instagram">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/shop03.png" alt="Instagram 1" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+            <!-- Instagram Begin -->
+        <div class="instagram">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/shop03.png" alt="Instagram 1" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/shop01.png" alt="Instagram 2" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/shop01.png" alt="Instagram 2" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/hotdeal1.png" alt="Instagram 3" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/hotdeal1.png" alt="Instagram 3" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/th (2).jpeg" alt="Instagram 4" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/th (2).jpeg" alt="Instagram 4" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/product06.png" alt="Instagram 5" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-facebook"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/product06.png" alt="Instagram 5" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item">
-                    <img src="img/cat-4.jpg" alt="Instagram 6" class="img-fluid">
-                    <div class="instagram__overlay">
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                    <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                        <div class="instagram__item">
+                            <img src="img/cat-4.jpg" alt="Instagram 6" class="img-fluid">
+                            <div class="instagram__overlay">
+                                <i class="fab fa-facebook"></i>
+                                <a href="https://www.facebook.com/FZINFO21/">Axanet Services</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Instagram End -->
+        <!-- Instagram End -->
 
- <!-- Footer Start -->
- <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <a href="" class="text-decoration-none">
-                 <img src="img/axenett.png" alt="footer_logo" class="img-fluid">
+                 <img src="img/axenett.png" alt="footer_logo" class="img-fluid2">
                 </a>
-                <p>  Entreprise pour la vente d'ordinateurs, PC, imprimantes, installation réseaux et cameras de surveillance, accessoires informatiques, 
-                logiciels, applications et sites web.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>22 Rue Ahmed Loukili V.N FES, Fez, Morocco</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>axanet1@gmail.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+212 5359-31468</p>
+                
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Liens rapides</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Produit</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Panier</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Catégorie</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contacte</a>
+                            <a class="text-dark mb-2" href="accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
+                            <a class="text-dark mb-2" href="produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
+                            <a class="text-dark mb-2" href="paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
+                            <a class="text-dark mb-2" href="categories"><i class="fa fa-angle-right mr-2"></i>Catégorie</a>
+                            <a class="text-dark mb-2" href="inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
+                            <a class="text-dark" href="contacts"><i class="fa fa-angle-right mr-2"></i>Contacte</a>
                         </div>
                     </div>
-              
-                       
-                    <div class="col-lg-4 col-md-8 col-sm-8">
-                        <!-- ///////////////////////////// -->
-                                
-                  </div>
-                </div>
+                 
+                       <div class="col-lg-5 col-md-10 col-sm-8">
+                            <p> AXANET est une entreprise pour la vente d'ordinateurs, PC, imprimantes, installation réseaux et cameras de surveillance, accessoires informatiques, 
+                                    logiciels, applications et sites web.</p>
+                           <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>22 Rue Ahmed Loukili V.N FES, Fez, Morocco</p>
+                           <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>axanet1@gmail.com</p>
+                                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+212 5359-31468</p>
+                      </div>
+                   
+
+             </div>
                 
             </div>
             
@@ -609,59 +571,24 @@
                     Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
                 </p>
             </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
 
             
         </div>
         
     </div>
     <!-- Footer End -->
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
 
 </html>

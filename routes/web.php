@@ -1,6 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\PanierController;
+use App\Http\Controllers\PaiementController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\UtilisateurController;
+use App\Http\Controllers\CommandeController;
+use App\Http\Controllers\CommandeDetailController;
+use App\Http\Controllers\RoleController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('accueil');
 });
 
 Route::get('/produits', function () {
@@ -44,6 +54,33 @@ Route::get('/categories', function () {
 });
 
 //////////////////////////////////////////////////////////////////////////Dashbord
+
+// // Route pour afficher un produit et categorie dans la page accueil
+Route::get('/accueils', [ProduitController::class, 'afficherDerniers'])->name('accueil');
+Route::get('/', [ProduitController::class, 'afficherDerniers'])->name('accueil');
+
+//tout les categorie
+Route::get('/categories', [CategorieController::class, 'afficheToutCate'])->name('categories.index');
+
+//tout les produit
+Route::get('/produits', [ProduitController::class, 'afficheToutProd'])->name('produits.index');
+
+
+
+//filtrage
+Route::get('/produits', [ProduitController::class, 'filtrer'])->name('produits.filtrer');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

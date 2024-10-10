@@ -221,44 +221,20 @@
 				<!-- row -->
 				<div class="row">
 					<!-- shop -->
+                    @foreach($categories as $categorie)
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
+								<img src="{{ asset('img/' . $categorie->imageCate) }}" alt="{{ $categorie->nomC }}">
 							</div>
 							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
+								<h3>{{ $categorie->nomC }}<br>Collection</h3>
 								<a href="produits" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
-					<!-- /shop -->
-                    <div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="produits" class="cta-btn">Afficher les Produits  <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-                    <!-- ///// -->
-				
-                    <div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-								<img src="./img/shop01.png" alt="">
-							</div>
-							<div class="shop-body">
-								<h3>Ordinateur portable<br>Collection</h3>
-								<a href="produits" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
-
+                    @endforeach
+		
 				
 				</div>
 				<!-- /row -->
@@ -269,43 +245,6 @@
 
     <br></br>
     <br></br>
-
-
-
-    
- <!-- <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-1.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-2.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-3.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-4.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-5.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-6.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-7.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="img/vendor-8.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
-    <!-- Vendor End -->
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

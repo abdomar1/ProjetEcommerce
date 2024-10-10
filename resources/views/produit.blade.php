@@ -186,20 +186,7 @@
 
                              <!-- Inclure FontAwesome -->
                          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
-
-
-
-
-
-
-
-                                                     
-
-
-                      
-             
-
-                       </div>  
+                          </div>  
 
 
                        
@@ -226,78 +213,75 @@
         </div>
     </div>
     <!-- Page Header End -->
-
+ 
     <div class="filter-products-container">
                 <!-- Sidebar de filtrage par couleurs -->
                 <div class="color-filter-sidebar">
                     <h4>Filtrer par Catégorie</h4>
                     <div class="color-filter-options">
                         <label class="color-primary-red">
-                            <input type="checkbox" checked id="color-red"> All
+                            <input type="checkbox"  name="categorie"  value="" checked id="color-red"> All
                         </label>
+                        @foreach($categories as $categorie)
                         <label class="color-primary-red">
-                            <input type="checkbox" id="color-red"> PC
+                            <input type="checkbox" name="categorie" id="color-red" value="{{ $categorie->id }}">{{ $categorie->nomC }}
                         </label>
-                        <label class="color-primary-blue">
-                            <input type="checkbox" id="color-blue"> Télèphone
-                        </label>
+                        @endforeach
                     </div>
                     <br>
                     <h4>Filtrer par Couleur</h4>
                     <div class="color-filter-options">
+                      @foreach($produits as $produit)
+
                         <label class="color-primary-black">
-                            <input type="checkbox" id="color-black"> Noir
+                            <input type="checkbox" name="couleur[]" value="{{ $produit->coleur }}" id="color-black" > {{ $produit->coleur }}
                         </label>
-                        <label class="color-primary-white">
-                            <input type="checkbox" id="color-white"> Blanc
-                        </label>
-                    </div>
-                    <h4>Filtrer par Prix</h4>
-                    <div class="color-filter-options">
-                        <label class="color-primary-black">
-                            <input type="checkbox" id="color-black"> $0 - $100
-                        </label>
-                        <label class="color-primary-white">
-                            <input type="checkbox" id="color-white"> $100 - $200
-                        </label>
+                        @endforeach
+                    
                     </div>
                     <h4>Filtrer par Marque</h4>
                     <div class="color-filter-options">
+                      @foreach($produits as $produit)
+
                         <label class="color-primary-black">
-                            <input type="checkbox" id="color-black"> Deel
+                            <input type="checkbox" name="marque[]" value="{{ $produit->marque }}" id="color-black" > {{ $produit->marque }}
                         </label>
-                        <label class="color-primary-white">
-                            <input type="checkbox" id="color-white"> Hp
-                        </label>
+                       @endforeach
                     </div>
-                    <h4>Filtrer par Marque</h4>
+                    <!-- <h4>Filtrer par Prix</h4>
                     <div class="color-filter-options">
+                      @foreach($produits as $produit)
+
                         <label class="color-primary-black">
-                            <input type="checkbox" id="color-black"> Deel
+                            <input type="checkbox" id="color-black"> {{ $produit->prix }}
                         </label>
-                        <label class="color-primary-white">
-                            <input type="checkbox" id="color-white"> Hp
-                        </label>
+                        @endforeach
+                    
                     </div>
+                     -->
+                    
                 </div>
 
                     <!-- Section des produits filtrés -->
                     <div class="row px-xl-5">
                         <div class="col">
                             <div class="owl-carousel product-carousel">
+                                @foreach($produits as $produit)
+
                                     <div class="product-card">
                                         <div class="product-image-container"style="width: auto;">
-                                            <img src="img/product02.png" class="product-image" alt="Produit 2">
+                                            <img src="{{ asset('img/' . $produit->img) }}" class="product-image" alt="{{ $produit->nomP }}">
                                             <div class="product-overlay" >
                                                 <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
                                                 <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                             </div>
                                         </div>
                                         <div class="product-info text-center">
-                                            <h4 class="product-title mb-0">Produit 2</h4>
-                                            <h6 class="product-price mb-0">$150.00</h6>
+                                            <h4 class="product-title mb-0">{{ $produit->nomP }}</h4>
+                                            <h6 class="product-price mb-0">{{ $produit->prix }}</h6>
                                         </div>
                                     </div>
+                                @endforeach
         
                               </div>
                       </div>

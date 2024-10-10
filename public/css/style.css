@@ -2180,6 +2180,11 @@ Table OF Contents
         height: auto;
     }
     
+    .img-fluid2 {
+        max-width: 100%;
+        height: auto;
+    }
+    
     .img-thumbnail {
         padding: 0.25rem;
         background-color: #fff;
@@ -8746,6 +8751,7 @@ Table OF Contents
         }
         .justify-content-md-center {
             justify-content: center !important;
+            background-color: #000;
         }
         .justify-content-md-between {
             justify-content: space-between !important;
