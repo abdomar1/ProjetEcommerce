@@ -19,7 +19,7 @@ class Panier extends Model
   // gérer plusieurs quantités du même produit, vous pouvez ajouter des méthodes pour manipuler la quantité
   public function ajouterProduit(Produit $produit, $quantite = 1)
   {
-      $this->produits()->attach($produit->id, ['quantite' => $quantite]);
+      $this->produits()->attach($produit->id, ['qte' => $quantite]);
   }
 
   public function retirerProduit(Produit $produit)

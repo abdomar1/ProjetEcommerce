@@ -59,28 +59,13 @@ Route::get('/categories', function () {
 Route::get('/accueils', [ProduitController::class, 'afficherDerniers'])->name('accueil');
 Route::get('/', [ProduitController::class, 'afficherDerniers'])->name('accueil');
 
-//tout les categorie
-Route::get('/categories', [CategorieController::class, 'afficheToutCate'])->name('categories.index');
 
 //tout les produit
 Route::get('/produits', [ProduitController::class, 'afficheToutProd'])->name('produits.index');
 
 
-
 //filtrage
 Route::get('/produits', [ProduitController::class, 'filtrer'])->name('produits.filtrer');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -90,3 +75,11 @@ Route::get('/admin/dashboard', function () {
     return view('admin/dashboard');
 });
 // --------------------------------------------------admin-------------------------------------------------
+
+
+// ----------------------------------api de crud categories--------------------//
+Route::resource('admin/categories', CategorieController::class);
+
+Route::resource('admin/produits', ProduitController::class);
+
+// ----------------------------------api de crud categories --------------------//
