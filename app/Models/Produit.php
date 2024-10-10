@@ -10,13 +10,8 @@ class Produit extends Model
     use HasFactory;
 
     protected $fillable = [
-<<<<<<< HEAD
         'nom',         
         'description',  
-=======
-        'nomP',          
-        'descriptionP',  
->>>>>>> 65d783c5ba694ba4b5d58071c0b716a2c7fc52a4
         'prix',          
         'img',           
         'details',    

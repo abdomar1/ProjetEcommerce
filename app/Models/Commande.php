@@ -29,8 +29,4 @@ class Commande extends Model
         return $this->hasMany(CommandeDetail::class, 'commande_id');
     }
     
-    public function commandeDetails()
-    {
-        return $this->hasMany(CommandeDetail::class, 'idCmd');
-    }
 }
