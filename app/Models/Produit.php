@@ -10,24 +10,24 @@ class Produit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomP',         
-        'descriptionP',  
+        'nom',         
+        'description',  
         'prix',          
         'img',           
-        'descTechno',    
-        'principCaracte', 
+        'details',    
+        'principle', 
         'marque',       
-        'coleur',        
-        'idCate',        
+        'color',        
+        'category_id',        
     ];
 
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class, 'idCate');
+        return $this->belongsTo(Categorie::class, 'category_id');
     }
     public function paniers()
     {
-        return $this->hasMany(Panier::class, 'idProd'); // Un produit peut être dans plusieurs paniers
+        return $this->belongsToMany(Panier::class, 'panier_produit')->withPivot('quantite'); // Un produit peut être dans plusieurs paniers
     }
     
 
