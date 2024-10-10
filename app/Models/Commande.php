@@ -10,7 +10,7 @@ class Commande extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idUtil',   
+        'idUtil',    
         'total',     
         'status',    
     ];
@@ -24,4 +24,8 @@ class Commande extends Model
         return $this->hasMany(Paiement::class, 'idCmd'); // Une commande peut avoir plusieurs paiements
     }
     
+    public function commandeDetails()
+    {
+        return $this->hasMany(CommandeDetail::class, 'idCmd');
+    }
 }

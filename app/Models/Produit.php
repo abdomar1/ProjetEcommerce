@@ -10,7 +10,7 @@ class Produit extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomP',         
+        'nomP',          
         'descriptionP',  
         'prix',          
         'img',           
@@ -29,6 +29,11 @@ class Produit extends Model
     {
         return $this->hasMany(Panier::class, 'idProd'); // Un produit peut être dans plusieurs paniers
     }
+    
+     public function commandeDetails()
+     {
+         return $this->hasMany(CommandeDetail::class, 'idProd');
+     }
     
 
 }
