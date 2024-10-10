@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idUtil')->constrained('utilisateurs')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `utilisateurs`
             $table->decimal('total', 10, 2);
             $table->enum('status', ['en attente', 'en cours', 'livrée', 'annulée']);
         });
@@ -30,6 +30,7 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('commande-details');
+        Schema::dropIfExists('commandes');
     }
 };

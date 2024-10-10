@@ -12,11 +12,12 @@ class Categorie extends Model
     protected $fillable = [
         'nomC',          
         'descriptionC',
+        'image'
     ];
 
     public function produits()
     {
-        return $this->hasMany(Produit::class, 'idCate'); 
+        return $this->hasMany(Produit::class, 'category_id'); 
     }
 
 }

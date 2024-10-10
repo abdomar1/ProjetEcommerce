@@ -12,7 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('commande-details', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
@@ -27,7 +27,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return void 
      */
     public function down()
     {

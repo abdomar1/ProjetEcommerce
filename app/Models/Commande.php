@@ -10,7 +10,7 @@ class Commande extends Model
     use HasFactory;
 
     protected $fillable = [
-        'idUtil',   
+        'idUtil',    
         'total',     
         'status',    
     ];
@@ -29,4 +29,8 @@ class Commande extends Model
         return $this->hasMany(CommandeDetail::class, 'commande_id');
     }
     
+    public function commandeDetails()
+    {
+        return $this->hasMany(CommandeDetail::class, 'idCmd');
+    }
 }

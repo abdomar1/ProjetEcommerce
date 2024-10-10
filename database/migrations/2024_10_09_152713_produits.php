@@ -16,16 +16,16 @@ return new class extends Migration
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nomP');
-            $table->string('descriptionP');
+            $table->string('nom');
+            $table->string('description');
             $table->decimal('prix',10,3);
             $table->string('img');
-            $table->text('descTechno');
-            $table->text('principCaracte');
+            $table->text('details');
+            $table->text('principle');
             $table->string('marque');
-            $table->string('coleur');          
+            $table->string('color');          
             
-            $table->foreignId('idCate')->constrained('categories')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
+            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
 
       
         });
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('produits');
     }
 };
