@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('paniers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('qtePan');
-
-            $table->foreignId('idProd')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate();
-
+            $table->string('qte');
+            $table->foreignId('produit_id')->constrained('produits')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('paniers');
     }
 };

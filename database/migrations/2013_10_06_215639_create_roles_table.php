@@ -13,17 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('utilisateurs', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
+            $table->enum('nomRole', ['admin', 'user']); 
             $table->timestamps();
-            $table->string('nomU');
-            $table->string('prenom');
-            $table->string('email');
-            $table->string('password');
-            $table->string('adresse');
-            $table->string('telephone');
-            $table->foreignId('idRole')->constrained('roles')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `roles`
-         
         });
     }
 
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 };

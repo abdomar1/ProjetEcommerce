@@ -83,3 +83,11 @@ Route::get('/admin/dashboard', function () {
     return view('admin/dashboard');
 });
 // --------------------------------------------------admin-------------------------------------------------
+
+
+// ----------------------------------api de crud categories--------------------//
+Route::resource('admin/categories', CategorieController::class);
+
+Route::resource('admin/produits', ProduitController::class);
+
+// ----------------------------------api de crud categories --------------------//

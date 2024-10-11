@@ -9,22 +9,18 @@ class CommandeDetail extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
-        'idCmd',       
-        'idProd',     
-        'quantite',   
-        'prixUnit',   
-    ];
 
+    public function commande()
+    {
+        return $this->belongsTo(Commande::class, 'commande_id');
+    }
 
-     public function commande()
-     {
-         return $this->belongsTo(Commande::class, 'idCmd'); //details appartient à une commande
-     }
+    public function produit()
+    {
+        return $this->belongsTo(Produit::class, 'produit_id');
+    }
+    
+}
+
  
-     // Relation avec la table Produit
-     public function produit()
-     {
-         return $this->belongsTo(Produit::class, 'idProd');
-     }
-} 
+

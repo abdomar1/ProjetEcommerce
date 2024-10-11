@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('idCmd')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
+            $table->foreignId('commande_id')->constrained('commandes')->cascadeOnDelete()->cascadeOnUpdate(); // FK vers `commandes`
             $table->decimal('montant', 10, 3);
-            $table->enum('modePaim',['carte bancaire', 'espèces', 'virement bancaire']);
+            $table->enum('modePaim',['carte bancaire', 'especes', 'virement bancaire']);
             $table->dateTime('datePaim');
         
         });
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('paiements');
     }
 };

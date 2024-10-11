@@ -18,6 +18,6 @@ class Paiement extends Model
 
     public function commande()
     {
-        return $this->belongsTo(Commande::class, 'idCmd'); // Un paiement est lié à une commande
+        return $this->belongsTo(Commande::class, 'commande_id'); // Un paiement est lié à une commande
     }
 }

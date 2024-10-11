@@ -16,16 +16,17 @@ class Commande extends Model
     ];
     public function utilisateur()
     {
-        return $this->belongsTo(Utilisateur::class, 'idUtil');
+        return $this->belongsTo(User::class, 'user_id');
         //indiquant qu'un utilisateur passee à un commande. 
     }
     public function paiements()
     {
-        return $this->hasMany(Paiement::class, 'idCmd'); // Une commande peut avoir plusieurs paiements
+        return $this->hasMany(Paiement::class, 'commande_id '); // Une commande peut avoir plusieurs paiements
     }
-    
+
     public function commandeDetails()
     {
-        return $this->hasMany(CommandeDetail::class, 'idCmd');
+        return $this->hasMany(CommandeDetail::class, 'commande_id');
     }
+    
 }

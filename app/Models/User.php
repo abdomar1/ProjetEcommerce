@@ -18,9 +18,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'nom',      
+        'prenom',    
+        'email',     
+        'password',  
+        'adresse',   
+        'telephone', 
+        'idRole',   
     ];
 
     /**
@@ -41,4 +45,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    // Relation avec le modèle Role
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+        // Relation : La relation entre les modèles Utilisateur et Role est définie comme suit :
+
+        // Utilisateur -> Role (belongsTo) : Cela signifie qu'un utilisateur appartient à un rôle.
+        // Role -> Utilisateur (hasMany) : Cela signifie qu'un rôle peut avoir plusieurs utilisateurs associés.
+                //
+    }
+    public function commandes()
+    {
+        return $this->hasMany(Commande::class, 'user_id'); 
+        //indiquant qu'un utilisateur peut avoir plusieurs commandes.
+    }
+
 }
