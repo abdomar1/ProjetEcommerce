@@ -162,7 +162,7 @@
                                                      <input type="text" class="form-control" id="registerName" placeholder="Votre nom" required>
                                                  </div>
                                                  <div class="form-group">
-                                                     <label for="registerEmail">Email</label>
+                                                      <label for="registerEmail">Email</label>
                                                      <input type="email" class="form-control" id="registerEmail" placeholder="Votre email" required>
                                                  </div>
                                                  <div class="form-group">
@@ -218,7 +218,7 @@
                 <!-- Sidebar de filtrage par couleurs -->
                 <div class="color-filter-sidebar">
                     <h4>Filtrer par Catégorie</h4>
-                     <form id="frmfiltre" method="GET" action="{{ route('produits.index') }}">
+                     <form id="frmfiltre" method="GET" action="{{ route('produits.filtrer') }}">
                           <div class="color-filter-options"> 
                     
                                 <div class="color-filter-sidebar">
@@ -226,7 +226,7 @@
                                         <label class="color-primary-red">
                                             <input type="checkbox" name="categorie[]" value="{{ $categorie->id }}"
                                                 @if(is_array($fCate) && in_array($categorie->id, $fCate)) checked @endif 
-                                                >{{ $categorie->nomC }}
+                                                >{{ $categorie->nom }}
                                         </label>
                                     @endforeach
                                 </div>
@@ -239,9 +239,9 @@
                                     @foreach($produits as $produit)
 
                                     <label>
-                                        <input type="checkbox" name="couleur[]" value="{{ $produit->coleur }}"
-                                        @if(is_array($fCouleur) && in_array($produit->coleur, $fCouleur)) checked @endif>
-                                        {{ $produit->coleur }}
+                                        <input type="checkbox" name="couleur[]" value="{{ $produit->color }}"
+                                        @if(is_array($fCouleur) && in_array($produit->color, $fCouleur)) checked @endif>
+                                        {{ $produit->color }}
                                     </label>
                                     @endforeach
                                 
@@ -285,32 +285,26 @@
                             }
                             </script>
 
-
-
-
-
-
-
                           </div>
                        
 
                     <!-- Section des produits filtrés -->
                     <div class="row px-xl-5"> 
                         <div class="col">
-                            <div class="owl-carousel product-carousel">     
+                            <div class="owl-carousel product-carousel">      
                                  @if($produits->count() > 0)
-                                @foreach($produits as $produit)
+                                 @foreach($produits as $produit)
                           
                                     <div class="product-card">
                                         <div class="product-image-container"style="width: auto;">
-                                            <img src="{{ asset('img/' . $produit->img) }}" class="product-image" alt="{{ $produit->nomP }}">
+                                            <img src="{{ asset('storage/' . $produit->img) }}" class="product-image" alt="{{ $produit->nom }}">
                                             <div class="product-overlay" >
-                                                <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                                <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
                                                 <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                             </div>
                                         </div>
                                         <div class="product-info text-center">
-                                            <h4 class="product-title mb-0">{{ $produit->nomP }}</h4>
+                                            <h4 class="product-title mb-0">{{ $produit->nom }}</h4>
                                             <h6 class="product-price mb-0">{{ $produit->prix }}</h6>
                                         </div>
                                     </div>

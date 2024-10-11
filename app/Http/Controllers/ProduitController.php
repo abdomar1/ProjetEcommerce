@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use App\Models\Produit;
@@ -38,7 +38,7 @@ class ProduitController extends Controller
             'prix' => 'required|numeric',
             'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'details' => 'nullable|string',
-            'principle' => 'nullable|string',
+            'principle' => 'nullable|string', 
             'marque' => 'nullable|string',
             'color' => 'nullable|string',
             'category_id' => 'required|exists:categories,id',

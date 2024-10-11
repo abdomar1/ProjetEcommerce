@@ -52,20 +52,20 @@ class HomeController extends Controller
                     $fCouleur = $request->query("couleur", []);
 
                     $produits = Produit::when($fCate, function ($query) use ($fCate) {
-                        return $query->whereIn('idCate', $fCate);
+                        return $query->whereIn('category_id', $fCate);
                     })
                     ->when($fMarque, function ($query) use ($fMarque) {
                         return $query->whereIn('marque', $fMarque);
                     })
                     ->when($fCouleur, function ($query) use ($fCouleur) {
-                        return $query->whereIn('coleur', $fCouleur);
+                        return $query->whereIn('color', $fCouleur);
                     })
                     ->get();
 
                     // Récupérer toutes les catégories, marques et couleurs
                     $categories = Categorie::all();
                     $marques = Produit::select('marque')->distinct()->get();
-                    $couleurs = Produit::select('coleur')->distinct()->get();
+                    $couleurs = Produit::select('color')->distinct()->get();
 
                     return view('produit', compact('produits', 'categories', 'marques', 'couleurs', 'fCate', 'fMarque', 'fCouleur'));
                                 

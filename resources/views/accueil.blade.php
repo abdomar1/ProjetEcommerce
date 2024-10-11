@@ -77,18 +77,18 @@
                      @foreach($derniersProduits as $produit)
                          <div class="product-card">
                                 <div class="product-image-container">
-                                    <img src="{{ asset('img/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nomP }}"
+                                    <img src="{{ asset('storage/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nom }}"
                                     >
                                     <div class="product-overlay">
                                         <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
                                        <form action=# methode="POST">
-                                          <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                           <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
                                         </form>
                                         </div>
                                 </div>
                                 <div class="product-info text-center">
                                     <h4 class="product-title mb-0">
-                                        {{ $produit->nomP }}
+                                        {{ $produit->nom }}
                                    </h4>
                                     <h6 class="product-price mb-0">
                                         {{ number_format($produit->prix, 2) }}
@@ -158,13 +158,13 @@
 				<div class="row">
 					<!-- shop -->
                     @foreach($derniersCategories as $categorie)
-                        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-4 col-xs-6"> 
                             <div class="shop">
                                 <div class="shop-img">
-                                    <img src="{{ asset('img/' . $categorie->imageCate) }}" alt="">
+                                    <img src="{{ asset('img/' . $categorie->image) }}" alt="{{ $categorie->nom }}">
                                 </div>
                                 <div class="shop-body">
-                                    <h3>{{ $categorie->nomC }}<br>Collection</h3>
+                                    <h3>{{ $categorie->nom }}<br>Collection</h3>
                                     <a href="#" class="cta-btn">Voir<i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>

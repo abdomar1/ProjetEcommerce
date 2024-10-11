@@ -63,15 +63,15 @@ Route::get('/accueils', [HomeController::class, 'afficherDerniers'])->name('accu
 Route::get('/', [HomeController::class, 'afficherDerniers'])->name('accueil');
 
 //tout les categorie
-Route::get('/categories', [HomeController::class, 'afficheToutCate'])->name('categories.index');
+Route::get('/categories', [HomeController::class, 'afficheToutCate'])->name('categories.affiche');
 
 // Route pour afficher les produits et filtrer par catégorie
-Route::get('/produits', [HomeController::class, 'afficheToutProd'])->name('produits.index');
+Route::get('/produits', [HomeController::class, 'afficheToutProd'])->name('produits.filtrer');
  
 
-//detail de produit 
+//detail de produit  
 Route::get('/details/{id}', [HomeController::class, 'show'])->name('detail.produit');
-
+ 
 //
 
 Route::get('/details/{id}', [HomeController::class, 'afProdDtail'])->name('detail.produit');

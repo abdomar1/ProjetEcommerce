@@ -225,10 +225,10 @@
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="{{ asset('img/' . $categorie->imageCate) }}" alt="{{ $categorie->nomC }}">
+								<img src="{{ asset('img/' . $categorie->image) }}" alt="{{ $categorie->nom }}">
 							</div>
 							<div class="shop-body">
-								<h3>{{ $categorie->nomC }}<br>Collection</h3>
+								<h3>{{ $categorie->nom }}<br>Collection</h3>
 								<a href="produits" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
