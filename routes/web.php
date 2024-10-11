@@ -9,6 +9,9 @@ use App\Http\Controllers\UtilisateurController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CommandeDetailController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\HomeController;
+
+
 
 
 
@@ -56,32 +59,22 @@ Route::get('/categories', function () {
 //////////////////////////////////////////////////////////////////////////Dashbord
 
 // // Route pour afficher un produit et categorie dans la page accueil
-Route::get('/accueils', [ProduitController::class, 'afficherDerniers'])->name('accueil');
-Route::get('/', [ProduitController::class, 'afficherDerniers'])->name('accueil');
+Route::get('/accueils', [HomeController::class, 'afficherDerniers'])->name('accueil');
+Route::get('/', [HomeController::class, 'afficherDerniers'])->name('accueil');
 
 //tout les categorie
-Route::get('/categories', [CategorieController::class, 'afficheToutCate'])->name('categories.index');
+Route::get('/categories', [HomeController::class, 'afficheToutCate'])->name('categories.index');
 
-//tout les produit
-Route::get('/produits', [ProduitController::class, 'afficheToutProd'])->name('produits.index');
+// Route pour afficher les produits et filtrer par catégorie
+Route::get('/produits', [HomeController::class, 'afficheToutProd'])->name('produits.index');
+ 
 
+//detail de produit 
+Route::get('/details/{id}', [HomeController::class, 'show'])->name('detail.produit');
 
+//
 
-//filtrage
-Route::get('/produits', [ProduitController::class, 'filtrer'])->name('produits.filtrer');
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/details/{id}', [HomeController::class, 'afProdDtail'])->name('detail.produit');
 
 
 // --------------------------------------------------admin-------------------------------------------------

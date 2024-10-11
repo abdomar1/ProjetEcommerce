@@ -93,11 +93,10 @@
              </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link">Accueil</a>
-                     <a href="produits" class="nav-item nav-link">Produits</a>
-                     
-                     <a href="categories" class="nav-item nav-link">Catégories</a>
-                     <a href="contacts" class="nav-item nav-link  active">Contacte</a>
+                     <a href="/accueils" class="nav-item nav-link">Accueil</a>
+                     <a href="/produits" class="nav-item nav-link">Produits</a>
+                     <a href="/categories" class="nav-item nav-link">Catégories</a>
+                     <a href="/contacts" class="nav-item nav-link  active">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
@@ -380,25 +379,25 @@
                                 </div>
                                 <ul>
                                     <li>
-                                    <a  href="accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
+                                    <a  href="/accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
                                     </li>
                                     <li>
-                                    <a  href="produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
+                                    <a  href="/produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
                                     </li>
                                     <li>
-                                    <a  href="paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
+                                    <a  href="/paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
                                    </li>
                                   
                                    <li>
-                                   <a  href="categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
+                                   <a  href="/categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
                                 
                                 </ul>
                                 <ul>
                                    <li>
-                                       <a  href="inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
+                                       <a  href="/inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
                                    </li>
                                    <li>
-                                        <a href="contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
+                                        <a href="/contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
                                    </li>
                                 </ul>
                             </div>

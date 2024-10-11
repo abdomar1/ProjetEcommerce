@@ -13437,3 +13437,11 @@ inscri
         display: inline-block;
     }
     /* ////////////////////modal */
+    
+    .layout_padding {
+        color: #000;
+    }
+    
+    .headerr {
+        background-image: url('img/pc.jpg');
+    }

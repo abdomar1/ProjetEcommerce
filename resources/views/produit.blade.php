@@ -218,56 +218,89 @@
                 <!-- Sidebar de filtrage par couleurs -->
                 <div class="color-filter-sidebar">
                     <h4>Filtrer par Catégorie</h4>
-                    <div class="color-filter-options">
-                        <label class="color-primary-red">
-                            <input type="checkbox"  name="categorie"  value="" checked id="color-red"> All
-                        </label>
-                        @foreach($categories as $categorie)
-                        <label class="color-primary-red">
-                            <input type="checkbox" name="categorie" id="color-red" value="{{ $categorie->id }}">{{ $categorie->nomC }}
-                        </label>
-                        @endforeach
-                    </div>
-                    <br>
-                    <h4>Filtrer par Couleur</h4>
-                    <div class="color-filter-options">
-                      @foreach($produits as $produit)
-
-                        <label class="color-primary-black">
-                            <input type="checkbox" name="couleur[]" value="{{ $produit->coleur }}" id="color-black" > {{ $produit->coleur }}
-                        </label>
-                        @endforeach
+                     <form id="frmfiltre" method="GET" action="{{ route('produits.index') }}">
+                          <div class="color-filter-options"> 
                     
-                    </div>
-                    <h4>Filtrer par Marque</h4>
-                    <div class="color-filter-options">
-                      @foreach($produits as $produit)
+                                <div class="color-filter-sidebar">
+                                    @foreach($categories as $categorie)
+                                        <label class="color-primary-red">
+                                            <input type="checkbox" name="categorie[]" value="{{ $categorie->id }}"
+                                                @if(is_array($fCate) && in_array($categorie->id, $fCate)) checked @endif 
+                                                >{{ $categorie->nomC }}
+                                        </label>
+                                    @endforeach
+                                </div>
+                          </div>
+                            <br>
+                            <h4>Filtrer par Couleur</h4>
+                            <div class="color-filter-options">
+                               <div class="color-filter-sidebar">
 
-                        <label class="color-primary-black">
-                            <input type="checkbox" name="marque[]" value="{{ $produit->marque }}" id="color-black" > {{ $produit->marque }}
-                        </label>
-                       @endforeach
-                    </div>
-                    <!-- <h4>Filtrer par Prix</h4>
-                    <div class="color-filter-options">
-                      @foreach($produits as $produit)
+                                    @foreach($produits as $produit)
 
-                        <label class="color-primary-black">
-                            <input type="checkbox" id="color-black"> {{ $produit->prix }}
-                        </label>
-                        @endforeach
-                    
-                    </div>
-                     -->
-                    
-                </div>
+                                    <label>
+                                        <input type="checkbox" name="couleur[]" value="{{ $produit->coleur }}"
+                                        @if(is_array($fCouleur) && in_array($produit->coleur, $fCouleur)) checked @endif>
+                                        {{ $produit->coleur }}
+                                    </label>
+                                    @endforeach
+                                
+                                </div>
+                                </div>
+
+                                <h4>Filtrer par Marque</h4>
+                                <div class="color-filter-options">
+                                     <div class="color-filter-sidebar">
+
+                                            @foreach($produits as $produit)
+                                            <label>
+                                                <input type="checkbox" name="marque[]" value="{{ $produit->marque }}"
+                                                @if(is_array($fMarque) && in_array($produit->marque, $fMarque)) checked @endif>
+                                                {{ $produit->marque }}
+                                            </label>
+                                            @endforeach
+                                    </div>   
+                                </div>   
+                                <div class="text-center mt-4">
+                                    <a href="" class="btn btn-sm text-dark p-0">        
+                                        <button  class="btn btn-warning mt-2" type="submit">Filtrer</button>
+                                    </a>
+                                </div>   
+                        </form>
+
+                                                    
+                        <script>
+                            function filterProdByCate(cate) {
+                                var allChecked = $("input[name='categorie[]'][value='']").is(':checked');
+
+                                // Si "All" est coché, décocher toutes les autres cases
+                                if (allChecked) {
+                                    $("input[name='categorie[]']").not("[value='']").prop('checked', false);
+                                }
+
+                                // Si une autre case est cochée, décocher "All"
+                                else {
+                                    $("input[name='categorie[]'][value='']").prop('checked', false);
+                                }
+                            }
+                            </script>
+
+
+
+
+
+
+
+                          </div>
+                       
 
                     <!-- Section des produits filtrés -->
-                    <div class="row px-xl-5">
+                    <div class="row px-xl-5"> 
                         <div class="col">
-                            <div class="owl-carousel product-carousel">
+                            <div class="owl-carousel product-carousel">     
+                                 @if($produits->count() > 0)
                                 @foreach($produits as $produit)
-
+                          
                                     <div class="product-card">
                                         <div class="product-image-container"style="width: auto;">
                                             <img src="{{ asset('img/' . $produit->img) }}" class="product-image" alt="{{ $produit->nomP }}">
@@ -282,6 +315,9 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                @else
+                                    <p>Aucun produit trouvé pour cette sélection de catégories.</p>
+                                @endif
         
                               </div>
                       </div>
@@ -495,6 +531,52 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+<!-- 
+    @push("scripts")
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var allCheckbox = document.getElementById('all-checkbox');
+        var otherCheckboxes = document.querySelectorAll('input[name="categorie[]"]');
+
+        // Si "All" est cochée, décocher toutes les autres cases
+        allCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                otherCheckboxes.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+            }
+        });
+
+        // Si une autre case est cochée, désactiver "All"
+        otherCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    allCheckbox.checked = false; // Désélectionner la case "All"
+                }
+
+                // Si toutes les catégories sont décochées, cocher "All"
+                var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
+                    return cb.checked;
+                });
+                if (!isAnyChecked) {
+                    allCheckbox.checked = true;
+                }
+            });
+        });
+
+        // Vérifier à l'initialisation : si aucune case n'est cochée, cocher "All"
+        var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
+            return cb.checked;
+        });
+        if (!isAnyChecked) {
+            allCheckbox.checked = true;
+        }
+    });
+</script>
+@endpush
+ -->
+
+
+</body>
 </html>

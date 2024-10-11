@@ -9,24 +9,28 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}">
+
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="{{ asset('https://fonts.gstatic.com') }}">
+    <link href="{{ asset('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap') }}" rel="stylesheet"> 
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css') }}" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <link href="css/footer.css" rel="stylesheet" />
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 
+     <!-- Lien vers Bootstrap CSS -->
+     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <!-- Lien vers Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <!-- Lien vers des styles personnalisés -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Lien vers FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 </head>
 
 <body>
@@ -69,7 +73,7 @@
 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
              <div class="site-logo">
                  <div class="col-lg-1 d-none d-lg-block">
-                     <img  src="img/axenet.png" alt="" class="logo" href=""> 
+                     <img  src="{{ asset('img/axenet.png') }}" alt="" class="logo" href=""> 
                  </div>
              </div>
                      
@@ -78,11 +82,11 @@
              </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                  <div class="navbar-nav mr-auto py-0">
-                     <a href="accueils" class="nav-item nav-link">Accueil</a>
-                     <a href="produits" class="nav-item nav-link">Produits</a>
+                     <a href="/accueils" class="nav-item nav-link">Accueil</a>
+                     <a href="/produits" class="nav-item nav-link">Produits</a>
                      
-                     <a href="categories" class="nav-item nav-link">Catégories</a>
-                     <a href="contacts" class="nav-item nav-link">Contacte</a>
+                     <a href="/categories" class="nav-item nav-link">Catégories</a>
+                     <a href="/contacts" class="nav-item nav-link">Contacte</a>
                  </div>
              
                  <div class="col-lg-6 col-6 text-left">
@@ -177,7 +181,7 @@
                          <!-- Contenu existant de votre navbar -->
 
                              <!-- Inclure FontAwesome -->
-                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+                         <link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css') }}" rel="stylesheet">  
 
                        </div>  
 
@@ -194,7 +198,7 @@
 
 
     <!-- Page Header Start -->
-    <div style="background-image:url('img/pc.jpg')">
+    <div style="background-image: url('{{ asset('img/pc.jpg') }}')">
   
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Details de Produit</h1>
@@ -206,93 +210,16 @@
         </div>
     </div>
     <!-- Page Header End -->
-
-
-    <!-- Shop Detail Start -->
-    <!-- <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-5 pb-5">
-                <div id="product-carousel" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="w-55" src="img/product01.png" alt="Image">
-                        </div>
-                      
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 pb-5">
-                <h3 class="font-weight-semi-bold">PC PORTABLE HP</h3>
-                 
-                <h4 class="font-weight-semi-bold mb-4">Prix : $250.00</h4>
-                <p class="mb-10" id="details"> Hp PC PORTABLE HP ELITEBOOK 840 G5 8ÉME GÉN-CORE I5-8Go-256 Go SSD-Remise à neuf </p>
-               
-                <div class="d-flex align-items-center mb-4 pt-2">
-                    <div class="input-group quantity mr-3" style="width: 130px;">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary btn-minus" >
-                            <i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control bg-secondary text-center" value="1">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary btn-plus">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <a href="paniers">
-                         <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Ajouter au panier</button>
-                    </a>
-                </div>
-               
-            </div>
-        </div>
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="nav nav-tabs justify-content-center border-secondary mb-4">
-                    <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Descriptif technique</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Principales caractéristiques</a>
-                </div>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="tab-pane-1">
-                        <h4 class="mb-3">Descriptif technique</h4>
-                        <p  id="details">L'ordinateur portable fin et léger HP EliteBook 840 G5 de 8ème génération permet aux utilisateurs d'être ultra productifs au bureau et en dehors du bureau. Travaillez en toute confiance grâce à des technologies éprouvées, à la sécurité, aux performances et aux fonctions de gestion qui sauront répondre à tous vos besoins.</p>
-                        <p  id="details">Puissance et mobilité Associez vitesse et puissance avec Windows 10, les processeurs Intel® Core™ 8e génération, un disque SSD PCIe de 3e génération . Améliorez le rendement en ajoutant de la mémoire vive DDR3, des disques hybrides pour un accès plus rapide à vos données et pour satisfaire les besoins de vos applications pro les plus exigeantes.</p>
-                    </div>
-                    <div class="tab-pane fade" id="tab-pane-2">
-                        <h4 class="mb-3">Principales caractéristiques</h4>
-
-                        <ul  id="details">
-                            <li>SKU: HP017CL1HU3QDNAFAMZ</li>
-                            <li>Gamme de produits: HP ELITEBOOK</li>
-                            <li>Modèle: HP ELITEBOOK</li>
-                            <li>Poids (kg): 1.48</li>
-                            <li>Matière principale: pvc </li>
-                        </ul>
-
-                    </div>
-                  
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Shop Detail End -->
-
-
-
-
- <!-- Product Details Section Begin -->
+   <!-- Product Details Section Begin -->
  <section class="product-details spad">
-        <div class="container">
+        <div class="container"> 
             <div class="row">
             
                 <div class="col-lg-5 pb-5">
                 <div id="product-carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="w-55" src="img/product01.png" alt="Image">
+                            <img class="w-55" src="{{ asset('img/' . $produit->img) }}" alt="{{ $produit->nomP }}">
                         </div>
                       
                     </div>
@@ -301,9 +228,9 @@
 
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3>Essential structured blazer <span>Brand: SKMEIMore Men Watches from SKMEI</span></h3>
-                        <div class="product__details__price">$ 75.0</div>
-                        <p>Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <h3>{{ $produit->nomP }} <span>Marque : {{ $produit->marque }}</span></h3>
+                        <div class="product__details__price">{{ $produit->prix }}</div>
+                        <p>{{ $produit->descriptionP }}</p>
                         <div class="product__details__button">
 
 
@@ -335,17 +262,13 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <h6>Descriptif technique</h6>
-                                <p>L'ordinateur portable fin et léger HP EliteBook 840 G5 de 8ème génération permet aux utilisateurs d'être ultra productifs au bureau et en dehors du bureau. Travaillez en toute confiance grâce à des technologies éprouvées, à la sécurité, aux performances et aux fonctions de gestion qui sauront répondre à tous vos besoins.</p>
+                                <p>{{ $produit->descTechno }}</p>
                                
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <h6>Principales caractéristiques</h6>
                                 <ul  id="details">
-                                    <li>SKU: HP017CL1HU3QDNAFAMZ</li>
-                                    <li>Gamme de produits: HP ELITEBOOK</li>
-                                    <li>Modèle: HP ELITEBOOK</li>
-                                    <li>Poids (kg): 1.48</li>
-                                    <li>Matière principale: pvc </li>
+                                    <li>{{ $produit->principCaracte }} </li>
                                 </ul>
 
                             </div>
@@ -369,33 +292,29 @@
     <div class="row px-xl-5">
         <div class="col">
             <div class="owl-carousel product-carousel">
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="img/product01.png" class="product-image" alt="Produit 1">
-                        <div class="product-overlay">
-                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                        </div>
-                    </div>
-                    <div class="product-info text-center">
-                        <h4 class="product-title mb-0">Produit 1</h4>
-                        <h6 class="product-price mb-0">$123.00</h6>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="img/product02.png" class="product-image" alt="Produit 2">
-                        <div class="product-overlay">
-                            <a href="details" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                            <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                        </div>
-                    </div>
-                    <div class="product-info text-center">
-                        <h4 class="product-title mb-0">Produit 2</h4>
-                        <h6 class="product-price mb-0">$150.00</h6>
-                    </div>
-                </div>
-                <!-- Ajoute d'autres produits ici -->
+            @foreach($derniersProduits as $produit)
+                    <div class="owl-carousel product-carousel">
+                         <div class="product-card">
+                                <div class="product-image-container">
+                                    <img src="{{ asset('img/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nomP }}"
+                                    >
+                                    <div class="product-overlay">
+                                        <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                    </div>
+                                </div>
+                                <div class="product-info text-center">
+                                    <h4 class="product-title mb-0">
+                                        {{ $produit->nomP }}
+                                   </h4>
+                                    <h6 class="product-price mb-0">
+                                        {{ number_format($produit->prix, 2) }}
+                                    </h6>
+                                </div>
+                         </div>
+                   </div>   
+               @endforeach
+                
             </div>
         </div>
     </div>
@@ -414,7 +333,7 @@
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info">
                         <a href="index.html" class="footer-logo">
-                            <img src="img/axenett.png" alt="footer_logo" class="img-fluid">
+                            <img src="{{ asset('img/axenett.png') }}" alt="footer_logo" class="img-fluid">
                         </a>
                         <p class="footer-info-text">
                         Entreprise pour la vente d'ordinateurs, PC, imprimantes, installation réseaux et cameras de surveillance, accessoires informatiques, 
@@ -501,22 +420,22 @@
                                     <a  href="accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
                                     </li>
                                     <li>
-                                    <a  href="produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
+                                    <a  href="/produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
                                     </li>
                                     <li>
-                                    <a  href="paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
+                                    <a  href="/paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
                                    </li>
                                   
                                    <li>
-                                   <a  href="categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
+                                   <a  href="/categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
                                 
                                 </ul>
                                 <ul>
                                    <li>
-                                       <a  href="inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
+                                       <a  href="/inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
                                    </li>
                                    <li>
-                                        <a href="contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
+                                        <a href="/contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
                                    </li>
                                 </ul>
                             </div>
