@@ -225,7 +225,7 @@
 					<div class="col-md-4 col-xs-6">
 						<div class="shop">
 							<div class="shop-img">
-								<img src="{{ asset('img/' . $categorie->image) }}" alt="{{ $categorie->nom }}">
+                                <img src="{{ asset('storage/' . $categorie->image) }}" alt="{{ $categorie->nom }}" class="img-thumbnail" >
 							</div>
 							<div class="shop-body">
 								<h3>{{ $categorie->nom }}<br>Collection</h3>
