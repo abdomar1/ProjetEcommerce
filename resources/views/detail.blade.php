@@ -296,7 +296,8 @@
                     <div class="owl-carousel product-carousel">
                          <div class="product-card">
                                 <div class="product-image-container">
-                                    <img src="{{ asset('img/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nomP }}"
+                                    <img src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}">
+
                                     >
                                     <div class="product-overlay">
                                         <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
