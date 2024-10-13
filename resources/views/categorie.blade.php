@@ -225,22 +225,34 @@
 
        <!-- barer de recherche -->
 
-    <div class="container mt-5">
-    <div class="dropdown">
-        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sélectionner une catégorie
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            @foreach($categories as $categorie)
-                <a class="dropdown-item" href="{{ route('rechercher.categorie', ['categorie' => $categorie->id]) }}">
-                    {{ $categorie->nom }}
-                </a>
-            @endforeach
+        <div class="container mt-5">
+            <input type="text" id="search" class="form-control" placeholder="Rechercher une catégorie..." />
+            <div id="results" class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
         </div>
-    </div>
-</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+            $(document).ready(function() {
+                $('#search').on('input', function() {
+                    var query = $(this).val();
+                    if (query.length >= 1) { // Vérifie si au moins un caractère est saisi
+                        $.ajax({
+                            url: "{{ route('rechercher.categories') }}",
+                            method: "GET",
+                            data: { query: query },
+                            success: function(data) {
+                                $('#results').empty(); // Effacer les résultats précédents
+                                $.each(data, function(index, category) {
+                                    $('#results').append('<a class="dropdown-item" href="#">' + category.nom + '</a>');
+                                });
+                            }
+                        });
+                    } else {
+                        $('#results').empty(); // Effacer les résultats si aucun caractère n'est saisi
+                    }
+                });
+            });
+            </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

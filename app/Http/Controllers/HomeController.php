@@ -86,17 +86,12 @@ class HomeController extends Controller
 
                 ///////recherche categorie
              
-                public function rechercherCategorie(Request $request)
+                public function rechercherCategories(Request $request)
                 {
-                    $categorieId = $request->query('categorie');
-
-                    // Vérifier si la catégorie existe
-                    $categorieTrouvee = Categorie::find($categorieId);
-                    
-                    // Récupérer toutes les catégories pour le dropdown
-                    $categories = Categorie::all();
+                    $query = $request->input('query'); // Récupérer la requête de recherche
+                    $categories = Categorie::where('nom', 'LIKE', "%{$query}%")->get(); // Filtrer les catégories
                 
-                    return view('categorie', compact('categorieTrouvee', 'categories'));
+                    return response()->json($categories); // Retourner les catégories au format JSON
                 }
                 
        

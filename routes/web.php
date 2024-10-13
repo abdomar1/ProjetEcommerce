@@ -92,7 +92,7 @@ Route::post('/envoyer-message', function (Illuminate\Http\Request $request) {
 });
 
 ///recherche cat
-Route::get('/categories', [HomeController::class, 'rechercherCategorie'])->name('rechercher.categorie');
+Route::get('/categories', [HomeController::class, 'rechercherCategories'])->name('rechercher.categories');
 
 
 
