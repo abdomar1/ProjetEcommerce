@@ -11,7 +11,7 @@ use App\Http\Controllers\CommandeDetailController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HomeController;
 use App\Mail\ContacteMail;
-
+use Illuminate\Support\Facades\Mail;
 
 /////////////////////////////////////
 
