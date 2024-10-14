@@ -249,24 +249,38 @@
                             </ul>
                         </div>
                         <div class="contact__form">
+                        @if(session('message'))
+                                    <div class="alert alert-success mt-3">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
                             <h5>Envoyer un message</h5>
-                            @if(session('message'))
-                                <div class="alert alert-success">
-                                    {{ session('message') }}
-                                </div>
-                            @endif
-                            <form action="/envoyer-message" method="POST">
-                            @csrf
-                                <input type="text"  name="nom" placeholder="Nom">
-                                <input type="text" name="email" placeholder="Email">
-                                <textarea name="message" placeholder="Message"></textarea>
-                                <button type="submit" class="site-btn">Envoyer un message</button>
-                          
-                            </form>
+                                <form action="{{ route('envoyer.message') }}" method="POST">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="nom">Nom :</label>
+                                         <input type="text" name="nom" id="nom" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email :</label>
+                                        <input type="email" name="email" id="email" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">Message :</label>
+                                        <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                                </form>
+
+                              
+
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6"> 
                     <div class="contact__map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151751.9007324377!2d-6.286962889940399!3d34.044483400108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1c5f57be8988ef%3A0x645eaaac72055a3f!2s22%20Rue%20Ahmed%20Loukili%2C%20Fez%2C%20Morocco!5e0!3m2!1sen!2sus!4v1633454785030!5m2!1sen!2sus"
