@@ -11,6 +11,8 @@ use App\Models\Role;
 use App\Models\Panier;
 use App\Models\Paiement;
 
+use App\Mail\ContacteMail;
+use Illuminate\Support\Facades\Mail;
 
 
 use Illuminate\Http\Request;
@@ -106,6 +108,28 @@ class HomeController extends Controller
                         return view('/categorie', compact('categories'));
 
             }
-                
+            public function envoyerMessage(Request $request)
+            {
+                // Valider les données du formulaire
+                $request->validate([
+                    'nom' => 'required|string|max:255',
+                    'email' => 'required|email|regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/',
+                    'message' => 'required|string|max:1000',
+                ]);
+
+                // Récupérer les détails du formulaire
+                $details = [
+                    'nom' => $request->input('nom'),
+                    'email' => $request->input('email'),
+                    'message' => $request->input('message'),
+                ];
+
+                // Envoyer l'email
+                Mail::to('saloumasalmamalek@gmail.com')->send(new ContacteMail($details));
+
+                // Rediriger avec un message de succès
+                return back()->with('message', 'Votre message a été envoyé avec succès.');
+            }
+                        
        
 }
