@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Axanet Services</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
@@ -211,10 +211,30 @@
 
 
     <!-- Categories Start -->
+
+
+
+
+   
+
    <!-- SECTION -->
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">les Catégories</span></h2>
         </div>
+
+
+       <!-- barer de recherche -->
+
+       
+        <!--end barre de recherche -->
+
+
+
+
+
+
+
+
 		<div class="section">
 			<!-- container -->
 			<div class="container">
@@ -222,21 +242,21 @@
 				<div class="row">
 					<!-- shop -->
                     @foreach($categories as $categorie)
-					<div class="col-md-4 col-xs-6">
-						<div class="shop">
-							<div class="shop-img">
-                                <img src="{{ asset('storage/' . $categorie->image) }}" alt="{{ $categorie->nom }}" class="img-thumbnail" >
-							</div>
-							<div class="shop-body">
-								<h3>{{ $categorie->nom }}<br>Collection</h3>
-								<a href="produits" class="cta-btn">Afficher les Produits <i class="fa fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-					</div>
+                    <div class="col-md-4 col-sm-6">
+                          <div class="category-card">
+                              <div class="category-image">
+                                  <img src="{{ asset('storage/' . $categorie->image) }}" alt="{{ $categorie->nom }}" class="img-thumbnail">
+                              </div>
+                              <div class="category-content">
+                                  <h3 class="category-title">{{ $categorie->nom }}</h3>
+                              </div>
+                              <div class="category-overlay"> 
+                                  <a href="" class="btn btn-warning mt-2">Voir la Collection</a>
+                              </div>
+                          </div>
+                      </div>
                     @endforeach
-		
-				
-				</div>
+		</div>
 				<!-- /row -->
 			<!-- /container -->
 		</div>
@@ -249,12 +269,12 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<footer id="dk-footer" class="dk-footer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <footer id="dk-footer" class="dk-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-4">
@@ -344,25 +364,25 @@
                                 </div>
                                 <ul>
                                     <li>
-                                    <a  href="/accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
+                                    <a  href="accueils"><i class="fa fa-angle-right mr-2"></i>Accueil</a>
                                     </li>
                                     <li>
-                                    <a  href="/produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
+                                    <a  href="produits"><i class="fa fa-angle-right mr-2"></i>Produit</a>
                                     </li>
                                     <li>
-                                    <a  href="/paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
+                                    <a  href="paniers"><i class="fa fa-angle-right mr-2"></i>Panier</a>
                                    </li>
                                   
                                    <li>
-                                   <a  href="/categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
+                                   <a  href="categories"><i class="fa fa-angle-right mr-2"></i>Catégories</a>
                                 
                                 </ul>
                                 <ul>
                                    <li>
-                                       <a  href="/inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
+                                       <a  href="inscriptions"><i class="fa fa-angle-right mr-2"></i>Inscription</a>
                                    </li>
                                    <li>
-                                        <a href="/contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
+                                        <a href="contacts"><i class="fa fa-angle-right mr-2"></i>Contact</a> </li>
                                    </li>
                                 </ul>
                             </div>
@@ -412,9 +432,6 @@
      
 </footer>
 
-
-
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -427,6 +444,52 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+<!-- 
+    @push("scripts")
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var allCheckbox = document.getElementById('all-checkbox');
+        var otherCheckboxes = document.querySelectorAll('input[name="categorie[]"]');
+
+        // Si "All" est cochée, décocher toutes les autres cases
+        allCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                otherCheckboxes.forEach(function(checkbox) {
+                    checkbox.checked = false;
+                });
+            }
+        });
+
+        // Si une autre case est cochée, désactiver "All"
+        otherCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    allCheckbox.checked = false; // Désélectionner la case "All"
+                }
+
+                // Si toutes les catégories sont décochées, cocher "All"
+                var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
+                    return cb.checked;
+                });
+                if (!isAnyChecked) {
+                    allCheckbox.checked = true;
+                }
+            });
+        });
+
+        // Vérifier à l'initialisation : si aucune case n'est cochée, cocher "All"
+        var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
+            return cb.checked;
+        });
+        if (!isAnyChecked) {
+            allCheckbox.checked = true;
+        }
+    });
+</script>
+@endpush
+ -->
+
+
+</body>
 </html>

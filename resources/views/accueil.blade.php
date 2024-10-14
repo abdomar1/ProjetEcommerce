@@ -11,7 +11,7 @@
     <section class=" slider_section ">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <div class="carousel-item active">
-            <div class="container">
+            <div class="container"> 
               <div class="row">
                 <div class="col-md-7">
                   <div class="detail-box">
@@ -69,44 +69,49 @@
         </div>
        <div class="row px-xl-5">
    
-           <div class="col">
-           <div class="row">
+          
+           
 
         
-                    <div class="owl-carousel product-carousel">
+                    <div class="owl-carousel product-carousel"> 
+             <div class="col">       <div class="row">
                      @foreach($derniersProduits as $produit)
-                         <div class="product-card">
-                                <div class="product-image-container">
-                                    <img src="{{ asset('storage/' . $produit->img) }}" class="product-image"  alt="{{ $produit->nom }}"
-                                    >
-                                    <div class="product-overlay">
-                                        <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                       <form action=# methode="POST">
-                                           <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                        </form>
-                                        </div>
-                                </div>
-                                <div class="product-info text-center">
-                                    <h4 class="product-title mb-0">
-                                        {{ $produit->nom }}
-                                   </h4>
-                                    <h6 class="product-price mb-0">
-                                        {{ number_format($produit->prix, 2) }}
-                                    </h6>
-                                </div>
-                         </div>
-                  @endforeach   
+                               <div class="col-md-4 col-sm-6"> 
+                                  <div class="category-card">
+                                    <div class="category-image">
+                                        <img src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}">
+                                    </div>
+                                   
+                                    <div class="category-overlay"> 
+                                          <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                            <form action=# methode="POST">
+                                                  <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                              </form>
+                                    </div>
+                                     <div class="product-info text-center">
+                                      <h4 class="product-title mb-0">
+                                          {{ $produit->nom }}
+                                    </h4>
+                                      <h6 class="product-price mb-0">
+                                          {{ number_format($produit->prix, 2) }}
+                                      </h6>
+                                  </div>
+                                  </div>
+                                 
+                             </div> 
+                            @endforeach   
+                                 
                 </div>   
                </div>
-                <div class="text-center mt-4">
+          
+           </div>
+         
+
+       </div>      <div class="text-center mt-4">
                     <a href="" class="btn btn-sm text-dark p-0">                  
                     <a href="produits" class="btn btn-warning mt-2"> Voir toutes les Produits </a>
                     </a>
                 </div>
-           </div>
-         
-
-       </div>
   </div>
 <!-- Products End -->
 
@@ -158,20 +163,28 @@
 				<div class="row">
 					<!-- shop -->
                     @foreach($derniersCategories as $categorie)
-                        <div class="col-md-4 col-xs-6"> 
-                            <div class="shop">
-                                <div class="shop-img">
-                                  <img src="{{ asset('storage/' . $categorie->image) }}" alt="{{ $categorie->nom }}" class="img-thumbnail" >
-                                </div>
-                                <div class="shop-body">
-                                    <h3>{{ $categorie->nom }}<br>Collection</h3>
-                                    <a href="#" class="cta-btn">Voir<i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-4 col-sm-6">
+                          <div class="category-card">
+                              <div class="category-image">
+                                  <img src="{{ asset('storage/' . $categorie->image) }}" alt="{{ $categorie->nom }}" class="img-thumbnail">
+                              </div>
+                              <div class="category-content">
+                                  <h3 class="category-title">{{ $categorie->nom }}</h3>
+                              </div>
+                              <div class="category-overlay"> 
+                                  <a href="" class="btn btn-warning mt-2">Voir la Collection</a>
+                              </div>
+                          </div>
+                      </div>
                     @endforeach
 				</div>
 				<!-- /row -->
+
+
+
+
+
+       
 
 
              <!-- Bouton pour accéder à toutes les catégories avec un style similaire à "Ajouter au panier" -->

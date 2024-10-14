@@ -250,11 +250,18 @@
                         </div>
                         <div class="contact__form">
                             <h5>Envoyer un message</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Nom">
-                                <input type="text" placeholder="Email">
-                                <textarea placeholder="Message"></textarea>
+                            @if(session('message'))
+                                <div class="alert alert-success">
+                                    {{ session('message') }}
+                                </div>
+                            @endif
+                            <form action="/envoyer-message" method="POST">
+                            @csrf
+                                <input type="text"  name="nom" placeholder="Nom">
+                                <input type="text" name="email" placeholder="Email">
+                                <textarea name="message" placeholder="Message"></textarea>
                                 <button type="submit" class="site-btn">Envoyer un message</button>
+                          
                             </form>
                         </div>
                     </div>
@@ -262,9 +269,10 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__map">
                         <iframe
-                        src="https://www.google.fr/maps/search/22+Rue+Ahmed+Loukili+V.N+FES,+Fez,+Morocco/@34.0444834,-5.0011979,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"
-                        height="780" style="border:0" allowfullscreen="">
-                    </iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151751.9007324377!2d-6.286962889940399!3d34.044483400108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1c5f57be8988ef%3A0x645eaaac72055a3f!2s22%20Rue%20Ahmed%20Loukili%2C%20Fez%2C%20Morocco!5e0!3m2!1sen!2sus!4v1633454785030!5m2!1sen!2sus"
+                            width="100%" height="780" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -273,7 +281,7 @@
 <!-- Contact Section End -->
 
 
-
+ 
 
 
 

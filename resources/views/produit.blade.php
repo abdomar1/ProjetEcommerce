@@ -221,7 +221,6 @@
                      <form id="frmfiltre" method="GET" action="{{ route('produits.filtrer') }}">
                           <div class="color-filter-options"> 
                     
-                                <div class="color-filter-sidebar">
                                     @foreach($categories as $categorie)
                                         <label class="color-primary-red">
                                             <input type="checkbox" name="categorie[]" value="{{ $categorie->id }}"
@@ -229,13 +228,10 @@
                                                 >{{ $categorie->nom }}
                                         </label>
                                     @endforeach
-                                </div>
                           </div>
                             <br>
                             <h4>Filtrer par Couleur</h4>
-                            <div class="color-filter-options">
-                               <div class="color-filter-sidebar">
-
+                              <div class="color-filter-options">
                                     @foreach($produits as $produit)
 
                                     <label>
@@ -244,22 +240,17 @@
                                         {{ $produit->color }}
                                     </label>
                                     @endforeach
-                                
-                                </div>
                                 </div>
 
                                 <h4>Filtrer par Marque</h4>
                                 <div class="color-filter-options">
-                                     <div class="color-filter-sidebar">
-
                                             @foreach($produits as $produit)
                                             <label>
                                                 <input type="checkbox" name="marque[]" value="{{ $produit->marque }}"
                                                 @if(is_array($fMarque) && in_array($produit->marque, $fMarque)) checked @endif>
                                                 {{ $produit->marque }}
                                             </label>
-                                            @endforeach
-                                    </div>   
+                                            @endforeach  
                                 </div>   
                                 <div class="text-center mt-4">
                                     <a href="" class="btn btn-sm text-dark p-0">        
@@ -286,40 +277,61 @@
                             </script>
 
                           </div>
-                       
 
-                    <!-- Section des produits filtrés -->
-                    <div class="row px-xl-5"> 
-                        <div class="col">
-                            <div class="owl-carousel product-carousel">      
-                                 @if($produits->count() > 0)
-                                 @foreach($produits as $produit)
-                          
-                                    <div class="product-card">
-                                        <div class="product-image-container"style="width: auto;">
-                                            <img src="{{ asset('storage/' . $produit->img) }}" class="product-image" alt="{{ $produit->nom }}">
-                                            <div class="product-overlay" >
-                                                <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                                <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info text-center">
-                                            <h4 class="product-title mb-0">{{ $produit->nom }}</h4>
-                                            <h6 class="product-price mb-0">{{ $produit->prix }}</h6>
-                                        </div>
-                                    </div>
-                                @endforeach
-                                @else
-                                    <p>Aucun produit trouvé pour cette sélection de catégories.</p>
-                                @endif
-        
-                              </div>
-                      </div>
+                    <div class="container-fluid py-5">
+               
+                        <div class="row px-xl-5">
+                         
+                               <div class="owl-carousel product-carousel">
+                              <div class="col">   
+                              <div class="row">   
+                               @if($produits->count() > 0)
+                                    @foreach($produits as $produit)
+                                             <div class="col-md-4 col-sm-6">
+                                                    <div class="category-card">  
+                                                        <div class="category-image">
+                                                            <img src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}">
+                                                        </div>
+                                                    
+                                                        <div class="category-overlay"> 
+                                                            <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                                                <form action=# methode="POST">
+                                                                    <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                                                </form>
+                                                        </div>
+                                                        <div class="product-info text-center">
+                                                            <h4 class="product-title mb-0">
+                                                                {{ $produit->nom }}
+                                                            </h4>
+                                                            <h6 class="product-price mb-0">
+                                                                {{ number_format($produit->prix, 2) }}
+                                                            </h6>
+                                                     </div>
+                                                </div>
+                                          </div> 
+
+                                    @endforeach
+                                    @else
+                                            <p>Aucun produit trouvé pour cette sélection de catégories.</p>
+                                        @endif
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+ 
+
+
+                    </div>
                  </div>
 
 </div>
                         <!-- Ajoute d'autres cartes produit ici -->
-                    <div class="col-12 pb-1">
+                    <!-- <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">
                           <ul class="pagination justify-content-center mb-3">
                             <li class="page-item active">
@@ -336,11 +348,21 @@
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Suivant</span>
                               </a>
-                            </li>
+                            </li> 
                           </ul>
                         </nav>
-                    </div>
-                
+                    </div> -->
+
+
+                    <!-- Ajouter la pagination -->
+                    <div class="col-12 pb-1">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-3">
+                        {{ $produits->links('pagination::bootstrap-4') }}
+                    </ul>
+                </nav>
+            </div>
+               
             <!-- Shop Product End -->
       
     <!-- Shop End -->
@@ -525,52 +547,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-<!-- 
-    @push("scripts")
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var allCheckbox = document.getElementById('all-checkbox');
-        var otherCheckboxes = document.querySelectorAll('input[name="categorie[]"]');
-
-        // Si "All" est cochée, décocher toutes les autres cases
-        allCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                otherCheckboxes.forEach(function(checkbox) {
-                    checkbox.checked = false;
-                });
-            }
-        });
-
-        // Si une autre case est cochée, désactiver "All"
-        otherCheckboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    allCheckbox.checked = false; // Désélectionner la case "All"
-                }
-
-                // Si toutes les catégories sont décochées, cocher "All"
-                var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
-                    return cb.checked;
-                });
-                if (!isAnyChecked) {
-                    allCheckbox.checked = true;
-                }
-            });
-        });
-
-        // Vérifier à l'initialisation : si aucune case n'est cochée, cocher "All"
-        var isAnyChecked = Array.from(otherCheckboxes).some(function(cb) {
-            return cb.checked;
-        });
-        if (!isAnyChecked) {
-            allCheckbox.checked = true;
-        }
-    });
-</script>
-@endpush
- -->
-
 
 </body>
 </html>

@@ -10,9 +10,10 @@ use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\CommandeDetailController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HomeController;
+use App\Mail\ContacteMail;
 
 
-
+/////////////////////////////////////
 
 
 /*
@@ -76,6 +77,21 @@ Route::get('/details/{id}', [HomeController::class, 'show'])->name('detail.produ
 
 Route::get('/details/{id}', [HomeController::class, 'afProdDtail'])->name('detail.produit');
 
+////send email
+Route::post('/envoyer-message', function (Illuminate\Http\Request $request) {
+    $details = [
+        'nom' => $request->input('nom'),
+        'email' => $request->input('email'),
+        'message' => $request->input('message'),
+    ];
+
+    // Envoyer l'email
+    Mail::to('saloumasalmamalek@gmail.com')->send(new ContacteMail($details));
+
+    return back()->with('message', 'Votre message a été envoyé avec succès.');
+});
+
+///recherche cat
 
 // --------------------------------------------------admin-------------------------------------------------
 

@@ -19,9 +19,8 @@ class HomeController extends Controller
 {
                 public function afficheToutCate()
                 {
-                    // Récupérer toutes les catégories
+                    // Récupérer toutes les catégories 
                     $categories = Categorie::all();
-
                     // Retourner la vue avec les catégories
                     return view('categorie', compact('categories'));
                 }
@@ -60,7 +59,7 @@ class HomeController extends Controller
                     ->when($fCouleur, function ($query) use ($fCouleur) {
                         return $query->whereIn('color', $fCouleur);
                     })
-                    ->get();
+                    ->paginate(3);
 
                     // Récupérer toutes les catégories, marques et couleurs
                     $categories = Categorie::all();
@@ -76,5 +75,18 @@ class HomeController extends Controller
                     return view('detail')->with('produit', $produit);
 
                 }
+
+                ////filtrer par categorie aparire de la page accueil
+                // public function filterByCategory($id)
+                // {
+                //     $produits = Produit::where('category_id', $id)->get();
+                    
+                //     return view('produit', compact('produits'));
+                // }
+
+                ///////recherche categorie
+             
+              
+                
        
 }

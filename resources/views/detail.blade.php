@@ -219,7 +219,7 @@
                 <div id="product-carousel" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="w-55" src="{{ asset('img/' . $produit->img) }}" alt="{{ $produit->nomP }}">
+                            <img class="product-image" class="w-55" src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}" >
                         </div>
                       
                     </div>
@@ -228,9 +228,9 @@
 
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3>{{ $produit->nomP }} <span>Marque : {{ $produit->marque }}</span></h3>
+                        <h3>{{ $produit->nom }} <span>Marque : {{ $produit->marque }}</span></h3>
                         <div class="product__details__price">{{ $produit->prix }}</div>
-                        <p>{{ $produit->descriptionP }}</p>
+                        <p>{{ $produit->description }}</p>
                         <div class="product__details__button">
 
 
@@ -262,13 +262,13 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <h6>Descriptif technique</h6>
-                                <p>{{ $produit->descTechno }}</p>
+                                <p>{{ $produit->details }}</p>
                                
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <h6>Principales caractéristiques</h6>
                                 <ul  id="details">
-                                    <li>{{ $produit->principCaracte }} </li>
+                                    <li>{{ $produit->Principle }} </li>
                                 </ul>
 
                             </div>
@@ -285,41 +285,56 @@
 
 
     <!-- Products Start -->
-<div class="container-fluid py-5">
-    <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Vous aimerez peut-être aussi</span></h2>
-    </div>
-    <div class="row px-xl-5">
-        <div class="col">
-            <div class="owl-carousel product-carousel">
-            @foreach($derniersProduits as $produit)
-                    <div class="owl-carousel product-carousel">
-                         <div class="product-card">
-                                <div class="product-image-container">
-                                    <img src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}">
-
-                                    >
-                                    <div class="product-overlay">
-                                        <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
-                                        <a href="paniers" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
-                                    </div>
-                                </div>
-                                <div class="product-info text-center">
-                                    <h4 class="product-title mb-0">
-                                        {{ $produit->nomP }}
-                                   </h4>
-                                    <h6 class="product-price mb-0">
-                                        {{ number_format($produit->prix, 2) }}
-                                    </h6>
-                                </div>
-                         </div>
-                   </div>   
-               @endforeach
-                
-            </div>
+    <div class="container-fluid py-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Les Produits</span></h2>
         </div>
-    </div>
-</div>
+       <div class="row px-xl-5">
+   
+          
+           
+
+        
+                    <div class="owl-carousel product-carousel"> 
+             <div class="col">       <div class="row">
+                     @foreach($derniersProduits as $produit)
+                               <div class="col-md-4 col-sm-6"> 
+                                  <div class="category-card">
+                                    <div class="category-image">
+                                        <img src="{{ asset('storage/' . $produit->img) }}" alt="{{ $produit->nom }}">
+                                    </div>
+                                   
+                                    <div class="category-overlay"> 
+                                          <a href="{{ route('detail.produit', $produit->id) }}" class="btn btn-outline-light"><i class="fas fa-eye"></i> Voir Détails</a>
+                                            <form action=# methode="POST">
+                                                  <a button type="submit" class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i> Ajouter au Panier</a>
+                                              </form>
+                                    </div>
+                                     <div class="product-info text-center">
+                                      <h4 class="product-title mb-0">
+                                          {{ $produit->nom }}
+                                    </h4>
+                                      <h6 class="product-price mb-0">
+                                          {{ number_format($produit->prix, 2) }}
+                                      </h6>
+                                  </div>
+                                  </div>
+                                 
+                             </div> 
+                            @endforeach   
+                                 
+                </div>   
+               </div>
+          
+           </div>
+         
+
+       </div>      <div class="text-center mt-4">
+                    <a href="" class="btn btn-sm text-dark p-0">                  
+                    <a href="produits" class="btn btn-warning mt-2"> Voir toutes les Produits </a>
+                    </a>
+                </div>
+  </div>
 <!-- Products End -->
 <br></br>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
