@@ -232,7 +232,7 @@
                             <br>
 
 
-
+ 
                                 <h4>Filtrer par Prix</h4>
                                 <div class="slider-container">
                                     <input type="range" min="0" max="100000" value="0" class="slider" id="priceRangeMin" oninput="updateMinPrice(this.value)">
@@ -245,8 +245,11 @@
                                 <form id="filterForm" method="GET" action="{{ route('produits.filtrer') }}">
                                     <input type="hidden" name="min_price" id="minPriceInput" value="0">
                                     <input type="hidden" name="max_price" id="maxPriceInput" value="100000">
-                                    <!-- Ajoutez vos autres filtres ici -->
-                                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                                    <div class="text-center mt-4">
+                                    <a href="" class="btn btn-sm text-dark p-0">        
+                                        <button  class="btn btn-warning mt-2" type="submit">Filtrer</button>
+                                    </a>
+                                </div>   
                                 </form>
 
                                 <script>
