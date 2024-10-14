@@ -65,7 +65,7 @@
                         </a>
                         <a class="text-dark px-2" href="">
                             <i class="fab fa-instagram"></i>
-                        </a>  
+                        </a>   
                         <a class="text-dark px-2" href="">
                             <i class="fab fa-whatsapp"></i>
                         </a>  

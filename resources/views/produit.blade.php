@@ -230,6 +230,52 @@
                                     @endforeach
                           </div>
                             <br>
+
+
+
+                                <h4>Filtrer par Prix</h4>
+                                <div class="slider-container">
+                                    <input type="range" min="0" max="100000" value="0" class="slider" id="priceRangeMin" oninput="updateMinPrice(this.value)">
+                                    <input type="range" min="0" max="100000" value="100000" class="slider" id="priceRangeMax" oninput="updateMaxPrice(this.value)">
+                                    <p>Prix:  <span id="priceValueMin">0</span>  MAD  -
+                                    <br><span id="priceValueMax">100000</span> MAD</p>
+                                </div>
+
+                                <!-- Formulaire pour soumettre les filtres -->
+                                <form id="filterForm" method="GET" action="{{ route('produits.filtrer') }}">
+                                    <input type="hidden" name="min_price" id="minPriceInput" value="0">
+                                    <input type="hidden" name="max_price" id="maxPriceInput" value="100000">
+                                    <!-- Ajoutez vos autres filtres ici -->
+                                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                                </form>
+
+                                <script>
+                                    function updateMinPrice(value) {
+                                        document.getElementById('minPriceInput').value = value;
+                                        document.getElementById('priceValueMin').innerText = value;
+                                    }
+
+                                    function updateMaxPrice(value) {
+                                        document.getElementById('maxPriceInput').value = value;
+                                        document.getElementById('priceValueMax').innerText = value;
+                                    }
+                                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <br>
                             <h4>Filtrer par Couleur</h4>
                               <div class="color-filter-options">
                                     @foreach($produits as $produit)
@@ -284,6 +330,7 @@
                          
                                <div class="owl-carousel product-carousel">
                               <div class="col">   
+                            
                               <div class="row">   
                                @if($produits->count() > 0)
                                     @foreach($produits as $produit)

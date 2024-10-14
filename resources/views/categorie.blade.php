@@ -225,21 +225,28 @@
 
        <!-- barer de recherche -->
 
+       <form action="{{ route('rechercher.categorie') }}" method="GET" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="search" id="searchInput" class="form-control" placeholder="Tapez une catégorie" aria-label="Recherche de catégorie" required>
+          
+            <button class="btn btn-warning"  type="submit" style="display: none;">Recherche</button></i>
+        </div>
+    </form>
+    <div id="noResults" class="alert alert-warning" style="display: none;">Aucune catégorie ne correspond à votre recherche.</div>
+
+
+        <!-- Barre de recherche -->
+
+
        
         <!--end barre de recherche -->
-
-
-
-
-
-
 
 
 		<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">
+				<div class="row"  id="categoryList">
 					<!-- shop -->
                     @foreach($categories as $categorie)
                     <div class="col-md-4 col-sm-6">
@@ -256,13 +263,44 @@
                           </div>
                       </div>
                     @endforeach
+                           
 		</div>
 				<!-- /row -->
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
     <!-- Categories End -->
+    <script>
+    function filterCategories() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const categoryList = document.getElementById('categoryList');
+        const categories = categoryList.getElementsByClassName('category-item');
+        const noResultsMessage = document.getElementById('noResults');
 
+        let hasResults = false; // Variable pour suivre si des résultats existent
+
+        for (let i = 0; i < categories.length; i++) {
+            const categoryTitle = categories[i].getElementsByClassName('category-title')[0];
+            if (categoryTitle) {
+                const textValue = categoryTitle.textContent || categoryTitle.innerText;
+                if (textValue.toLowerCase().indexOf(filter) > -1) {
+                    categories[i].style.display = ""; // Affiche l'élément
+
+                    hasResults = true; // Indique qu'il y a des résultats
+                } else {
+                    categories[i].style.display = "none"; // Cache l'élément
+                }
+            }
+        }
+        if (hasResults) {
+            noResultsMessage.style.display = "none"; // Masque le message si des résultats existent
+        } else {
+            noResultsMessage.style.display = "block"; // Affiche le message si aucun résultat n'est trouvé
+        }
+
+    }
+</script>
     <br></br>
     <br></br>
 

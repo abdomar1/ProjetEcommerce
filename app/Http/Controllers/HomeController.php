@@ -49,6 +49,10 @@ class HomeController extends Controller
                     $fCate = $request->query("categorie", []);
                     $fMarque = $request->query("marque", []);
                     $fCouleur = $request->query("couleur", []);
+                     // Récupérer les valeurs du filtre de prix
+                    $minPrice = $request->query('min_price', 0); 
+                    $maxPrice = $request->query('max_price', 100000); 
+
 
                     $produits = Produit::when($fCate, function ($query) use ($fCate) {
                         return $query->whereIn('category_id', $fCate);
@@ -59,12 +63,16 @@ class HomeController extends Controller
                     ->when($fCouleur, function ($query) use ($fCouleur) {
                         return $query->whereIn('color', $fCouleur);
                     })
+                    ->when([$minPrice, $maxPrice], function ($query) use ($minPrice, $maxPrice) {
+                        return $query->whereBetween('prix', [$minPrice, $maxPrice]);
+                    })
                     ->paginate(3);
 
-                    // Récupérer toutes les catégories, marques et couleurs
                     $categories = Categorie::all();
                     $marques = Produit::select('marque')->distinct()->get();
                     $couleurs = Produit::select('color')->distinct()->get();
+
+                  
 
                     return view('produit', compact('produits', 'categories', 'marques', 'couleurs', 'fCate', 'fMarque', 'fCouleur'));
                                 
@@ -86,7 +94,18 @@ class HomeController extends Controller
 
                 ///////recherche categorie
              
-              
+                public function rechercherCategories(Request $request)
+                {
+                        // Récupérer le terme de recherche depuis la requête
+                        $searchTerm = $request->input('search');
+
+                        // Filtrer les catégories selon le terme de recherche
+                        $categories = Categorie::where('nom', 'LIKE', '%' . $searchTerm . '%')->get();
+
+                        // Retourner la vue avec les catégories filtrées
+                        return view('/categorie', compact('categories'));
+
+            }
                 
        
 }

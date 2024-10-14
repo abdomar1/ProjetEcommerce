@@ -92,6 +92,9 @@ Route::post('/envoyer-message', function (Illuminate\Http\Request $request) {
 });
 
 ///recherche cat
+Route::get('/categories', [HomeController::class, 'rechercherCategories'])->name('rechercher.categorie');
+
+
 
 // --------------------------------------------------admin-------------------------------------------------
 
@@ -106,4 +109,4 @@ Route::resource('admin/categories', CategorieController::class);
 
 Route::resource('admin/produits', ProduitController::class);
 
-// ----------------------------------api de crud categories --------------------//
+// ----------------------------------api de crud categories --------------------// 

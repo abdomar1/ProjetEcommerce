@@ -13710,3 +13710,114 @@ inscri
 
 
 /* ///barre de rech  categorie*/
+
+
+/* Style pour la barre de recherche */
+
+.input-group {
+    max-width: 600px;
+    /* Largeur maximale de la barre de recherche */
+    margin: 0 auto;
+    /* Centrer horizontalement */
+}
+
+.input-group input {
+    border: 2px solid #ffc107;
+    /* Couleur de la bordure */
+    border-radius: 5px 0 0 5px;
+    /* Arrondir les coins à gauche */
+    padding: 10px;
+    /* Espacement intérieur */
+    font-size: 16px;
+    /* Taille de la police */
+    transition: border-color 0.3s;
+    /* Transition pour l'effet de focus */
+}
+
+.input-group input:focus {
+    border-color: #ff9800;
+    /* Couleur de la bordure au focus */
+    outline: none;
+    /* Retirer le contour par défaut */
+}
+
+.input-group .btn {
+    border-radius: 0 5px 5px 0;
+    /* Arrondir les coins à droite */
+    background-color: white;
+    /* Couleur de fond du bouton */
+    color: #000;
+    /* Couleur du texte */
+    border: 2px solid #ffc107;
+    /* Bordure du bouton */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* Transition pour l'effet au survol */
+}
+
+.input-group .btn:hover {
+    background-color: #ff9800;
+    /* Couleur de fond au survol */
+    border-color: #ff9800;
+    /* Bordure du bouton au survol */
+}
+
+
+/* /////////////////filtrage par prix */
+
+#priceValue {
+    font-size: 16px;
+    color: #333;
+}
+
+.filter-button {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #f39c12, #e74c3c);
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #f39c12;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #f39c12;
+    cursor: pointer;
+}
+
+.slider-container p {
+    color: black;
+    /* Change la couleur du texte en noir */
+    font-size: 16px;
+    /* Optionnel : ajuste la taille de la police */
+}
